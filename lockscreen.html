@@ -2,7 +2,11 @@
 <html>
    <head>
      <title>AvalancheOS | Lock</title>      
-     	
+     <script>
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        window.location.replace("system/touch/");
+      }
+      </script>
    </head>
 
 
