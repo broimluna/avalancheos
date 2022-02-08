@@ -126,7 +126,7 @@ input,select{vertical-align:middle}
 #appicons {
 	position: absolute;
 	z-index: 10;
-	top: 10px;
+	top: 5px;
     height: 85%;
     /*overflow-y: scroll;*/
     
@@ -134,7 +134,7 @@ input,select{vertical-align:middle}
 #appicons a {
     display: inline-table;
     cursor: pointer;
-    padding: 2px 10px;
+    padding: 2px 8px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     border-radius: 5px;
