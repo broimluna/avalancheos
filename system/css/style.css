@@ -49,7 +49,7 @@ input,select{vertical-align:middle}
 }
 .appsHtxt {
 	color: black;
-	padding: 6px;
+	padding: 8px;
 }
 
 .appsBtn {
@@ -130,7 +130,7 @@ input,select{vertical-align:middle}
 #appicons {
 	position: absolute;
 	z-index: 10;
-	top: 42px;
+	top: 44px;
 	height: 80%;
 	/* left: 5px; */
 	/* overflow-y: scroll; */
