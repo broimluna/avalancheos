@@ -131,9 +131,9 @@ input,select{vertical-align:middle}
 	position: absolute;
 	z-index: 10;
 	top: 42px;
-    height: 80%;
-    /*overflow-y: scroll;*/
-    
+	height: 80%;
+	/* left: 5px; */
+	/* overflow-y: scroll; */
 }
 #appicons a {
     display: inline-table;
