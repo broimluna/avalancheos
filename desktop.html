@@ -16,7 +16,7 @@
 
 
 <div id="appsmenu" style="width: 450px;height: 0px;" onclick="off()">
-		
+	<h1 class="appsHtxt">Apps</h1>	
     <center>
 		<div id="appicons">
                 <a class="openWindow" data-id="0"><img border="0" alt="" src="system/images/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>
@@ -134,12 +134,12 @@ function checkTime(i) {
     return i;
 }
 </script>
-
- <script>
-        if (location.protocol != 'https:') {
-         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+<script>
+    if (location.protocol != 'https:') {
+     location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
 </script>
+ 
 <body onload="startTime()">
    
 

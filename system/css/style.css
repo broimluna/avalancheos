@@ -44,8 +44,12 @@ input,select{vertical-align:middle}
 
 
 
-#programs, #links {
+.appsBtn, .appsHtxt {
     font-family: Arial, Helvetica, sans-serif;
+}
+.appsHtxt {
+	color: black;
+	padding: 10px;
 }
 
 .appsBtn {
@@ -126,8 +130,8 @@ input,select{vertical-align:middle}
 #appicons {
 	position: absolute;
 	z-index: 10;
-	top: 5px;
-    height: 85%;
+	top: 42px;
+    height: 80%;
     /*overflow-y: scroll;*/
     
 }
