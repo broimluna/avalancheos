@@ -1,4 +1,4 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{text-align:center;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 body{line-height:1}
 h1 {font-size: 1.5em;margin-bottom: 10px;}
 p{font-size: 1em;line-height: 1.3em;margin-bottom: 10px;}
@@ -49,7 +49,6 @@ input,select{vertical-align:middle}
 }
 .appsHtxt {
 	color: black;
-	padding: 8px;
 }
 
 .appsBtn {
@@ -111,6 +110,7 @@ input,select{vertical-align:middle}
 
 #appsmenu {
     position: fixed;
+    margin: 0 auto;
     width: 450px;
     height: 450px;
     left: 5px;
@@ -130,7 +130,7 @@ input,select{vertical-align:middle}
 #appicons {
 	position: absolute;
 	z-index: 10;
-	top: 44px;
+	top: 48px;
 	height: 80%;
 	/* left: 5px; */
 	/* overflow-y: scroll; */
