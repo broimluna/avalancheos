@@ -7,9 +7,51 @@ windowLeftPos = new Array,
 panel,
 id;
 
+function appson() {
+	document.getElementById("appsmenu").style.height = "450px";
+
+}
+
+function appsoff() {
+	document.getElementById("appsmenu").style.height = "0px";
+
+}
+
+function startTime(){
+    var date = new Date();
+    var h = date.getHours(); 
+    var m = date.getMinutes(); 
+   // var s = date.getSeconds(); 
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    //s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + " " + session;
+    document.getElementById("time").innerText = time;
+    document.getElementById("time").textContent = time;
+    setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
 function adjustFullScreenSize() {
 	$(".fullSizeWindow .wincontent").css("width", (window.innerWidth - 32));
 	$(".fullSizeWindow .wincontent").css("height", (window.innerHeight - 98));
+	setTimeout(adjustFullScreenSize, 10);
+
 }
 function makeWindowActive(thisid) {
 	$(".window").each(function() {      
@@ -37,6 +79,7 @@ function minimizeWindow(id){
 		$("#minimPanel" + id).removeClass('activeTab');
 	});	
 }
+
 
 function openWindow(id) {
 	if ($('#window' + id).hasClass("minimizedWindow")) {
@@ -72,7 +115,7 @@ $(document).ready(function(){
 		minimizedHeight[i] = $(this).height();
 		windowTopPos[i] = $(this).css("top");
 		windowLeftPos[i] = $(this).css("left");
-		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + $(this).attr("data-title") + '</div>');
+		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + $(this).attr("icon") + '</div>');
 		if ($(this).hasClass("closed")) {	$("#minimPanel" + i).addClass('closed');	}		
 		$(this).attr('id', 'window' + (i++));
 		$(this).wrapInner('<div class="wincontent"></div>');

@@ -5,17 +5,18 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="system/css/jquery-ui.css">
-	<script src="system/js/jquery-1.12.4.js"></script>
+	<script src="system/js/jquery.js"></script>
 	<script src="system/js/jquery-ui.js"></script>
 	<script src="system/js/script.js"></script>	
 	<link rel="stylesheet" type="text/css" href="system/css/style.css" />
+    
     
 	<title>AvalancheOS</title>
 </head>
 <body>
 
 
-<div id="appsmenu" style="height: 0px;" onclick="off()">
+<div id="appsmenu" style="height: 0px;" onclick="appsoff()">
 	<h1 class="appsHtxt">Apps</h1>	
     <center>
 		<div id="appicons">
@@ -39,106 +40,63 @@
 </div>
 
 
+
+
 	<div id="desktop">
         
-        <div class="window closed" data-title="Paint">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/paint-32x32.png' width='18' height='18'>" data-title="Paint">
 		<iframe width="100%" height="100%" src="apps/jspaint/index.html"></iframe>
 		</div>
 
-		<div class="window closed" data-title="Notepad">
+		<div class="window closed" data-html="true" icon="<img src='system/images/icons/notepad-32x32.png' width='18' height='18'>" data-title="Notepad">
 		<iframe width="100%" height="100%" src="apps/notepad/index.html"></iframe>
 		</div>
 
-		<div class="window closed" data-title="Minesweeper">
+		<div class="window closed" data-html="true" icon="<img src='system/images/icons/minesweeper-32x32.png' width='18' height='18'>" data-title="Minesweeper">
 			<iframe width="100%" height="100%" src="apps/minesweeper/index.html"></iframe>
 		</div>
                                     
-        <div class="window closed" data-title="Calendar">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/cal-32x32.png' width='18' height='18'>" data-title="Calendar">
 			<iframe width="100%" height="100%" src="apps/calendar/index.html"></iframe>
 		</div>
 
-        <div class="window closed" data-title="Calculator">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/calc-32x32.png' width='18' height='18'>" data-title="Calculator">
 			<iframe width="100%" height="100%" src="apps/calc/index.html"></iframe>
 		</div>
 
-         <div class="window closed" data-title="Bronze Browser">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/bronze-32x32.png' width='18' height='18'>" data-title="Bronze Browser">
 			<iframe width="100%" height="100%" src="apps/bronze/index.html"></iframe>
 		</div>
 
-        <div class="window closed" data-title="HyperOS">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/hyperos-32x32.png' width='18' height='18'>" data-title="HyperOS">
 			<iframe width="100%" height="100%" src="apps/hyperos/index.html"></iframe>
         </div>
 
 
-		<div class="window opened" data-title="About AvalancheOS">
+		<div class="window opened" data-html="true" icon="<img src='system/images/icons/about-32x32.png' width='18' height='18'>" data-title="About AvalancheOS">
 			<iframe width="100%" height="100%" src="apps/about/index.html"></iframe>
         </div>
 		
                           
 		
 		<div id="taskbar">
-			<button onclick="on();">Apps</button>           
-		</div>
+            <button onclick="appson();"><img border="0" alt="" src="system/images/sys_logo.png" width="40" height="24"></button>
+        </div>
 		
 		<div id="icons" class="desktopIcons">
 			<center>
-			<a onclick="off()" class="openWindow" data-id="0"><img border="0" alt="" src="system/images/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>
-			<a onclick="off()" class="openWindow" data-id="1"><img border="0" alt="" src="system/images/icons/notepad-32x32.png" width="32" height="32"><br>Notepad</a>
-			<a onclick="off()" class="openWindow" data-id="3"><img border="0" alt="" src="system/images/icons/cal-32x32.png" width="32" height="32"><br>Calendar</a>
-			<a onclick="off()" class="openWindow" data-id="4"><img border="0" alt="" src="system/images/icons/calc-32x32.png" width="32" height="32"><br>Calculator</a>
-			<a onclick="off()" class="openWindow" data-id="5"><img border="0" alt="" src="system/images/icons/bronze-32x32.png" width="32" height="32"><br>Bronze<br>Browser</a>
+			<a onclick="appsoff()" class="openWindow" data-id="0"><img border="0" alt="" src="system/images/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>
+			<a onclick="appsoff()" class="openWindow" data-id="1"><img border="0" alt="" src="system/images/icons/notepad-32x32.png" width="32" height="32"><br>Notepad</a>
+			<a onclick="appsoff()" class="openWindow" data-id="3"><img border="0" alt="" src="system/images/icons/cal-32x32.png" width="32" height="32"><br>Calendar</a>
+			<a onclick="appsoff()" class="openWindow" data-id="4"><img border="0" alt="" src="system/images/icons/calc-32x32.png" width="32" height="32"><br>Calculator</a>
+			<a onclick="appsoff()" class="openWindow" data-id="5"><img border="0" alt="" src="system/images/icons/bronze-32x32.png" width="32" height="32"><br>Bronze<br>Browser</a>
 		   </center>
 		</div>
 		
 	</div>
 
-    <script>
-		function on() {
-                  document.getElementById("appsmenu").style.height = "450px";
 
-		}
-		
-		function off() {
-                  document.getElementById("appsmenu").style.height = "0px";
 
-		}
-    </script>
-    <script>
-function startTime(){
-    var date = new Date();
-    var h = date.getHours(); 
-    var m = date.getMinutes(); 
-   // var s = date.getSeconds(); 
-    var session = "AM";
-    
-    if(h == 0){
-        h = 12;
-    }
-    
-    if(h > 12){
-        h = h - 12;
-        session = "PM";
-    }
-    
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    //s = (s < 10) ? "0" + s : s;
-    
-    var time = h + ":" + m + " " + session;
-    document.getElementById("time").innerText = time;
-    document.getElementById("time").textContent = time;
-    setTimeout(startTime, 1000);
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-}
-</script>
-<script>
-    if (location.protocol != 'https:') {
-     location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-    }
-</script>
  
 <body onload="startTime()">
    
