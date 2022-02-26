@@ -61,7 +61,7 @@ function makeWindowActive(thisid) {
 	$(".window").removeClass("activeWindow");
 	$("#window" + thisid).addClass("activeWindow");
 	
-	$(".dockIcon").removeClass('activeTab');
+	$(".task").removeClass('activeTab');
 	
 	$("#minimPanel" + thisid).addClass("activeTab");
 }
@@ -117,7 +117,7 @@ $(document).ready(function(){
 		minimizedHeight[i] = $(this).height();
 		windowTopPos[i] = $(this).css("top");
 		windowLeftPos[i] = $(this).css("left");
-		$("#dock").append('<div class="dockIcon" id="minimPanel' + i + '" data-id="' + i + '">' + $(this).attr("icon") + '</div>');
+		$("#taskbar").append('<div class="task" id="minimPanel' + i + '" data-id="' + i + '">' + $(this).attr("icon") + '</div>');
 		if ($(this).hasClass("closed")) {	$("#minimPanel" + i).addClass('closed');	}		
 		$(this).attr('id', 'window' + (i++));
 		$(this).wrapInner('<div class="wincontent"></div>');
@@ -143,7 +143,7 @@ $(document).ready(function(){
 		minimizeWindow($(this).parent().parent().attr("data-id"));
     });	
 	
-    $(".dockIcon").click(function(){		// taskbar click
+    $(".task").click(function(){		// taskbar click
 		id = $(this).attr("data-id");
 		if ($(this).hasClass("activeTab")) {	// minimize if active
 			minimizeWindow($(this).attr("data-id"));

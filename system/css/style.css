@@ -81,7 +81,7 @@ input,select{vertical-align:middle}
 
 #time { 
                 position:absolute;           
-                bottom:10px;
+                top:20px;
                 color: white;
                 font-family: Helvetica;
                 text-align: center;
@@ -114,17 +114,12 @@ input,select{vertical-align:middle}
     
     
 .time {
-  height: 30px;
+  height: 55px;
   width: 75px;
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: #2c2c2cad;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 15px 0px #000000; 
-  box-shadow: 0px 0px 15px 0px #000000;  
+  background-color: transparent;
   overflow: hidden;
 
  
@@ -332,7 +327,7 @@ left: 10px;
     line-height: 34px;
     font-size: 15px;
 }
-.dockIcon {
+.task {
     display: inline-block;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -347,38 +342,37 @@ left: 10px;
     padding: 0 1px;
 }
 
-.dockIcon.activeTab {
+.task.activeTab {
     transform: scale(1.38);
     background-color: #2e2e2e;
 }
 
-.dockIcon:hover {
+.task:hover {
     background: rgba(0, 0, 0, 0.3);
     color: #FFF;
 }
-.dockIcon.minimizedTab {
+.task.minimizedTab {
     transform: scale(1.25);
     transition: 0.5s;
 }
-.dockIcon.minimizedTab:hover {
+.task.minimizedTab:hover {
     transform: scale(1.25);
 }
-.dockIcon.closed {
+.task.closed {
     display: none;
     transition: 0.5s;
     
 }
-#dock {
+#taskbar {
 	position: absolute;
-	height: 55px;
-    width: 50%;
+	height: 54px;
 	border-top: 2px solid transparent;
 	bottom: 0;
 	left: 0;
 	right: 0;
     margin: 0 auto;
 	background: #2c2c2cad;
-    border-radius: 10px;
+    border-radius: 50px;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
 	z-index: 99998;
@@ -386,10 +380,7 @@ left: 10px;
     -webkit-box-shadow: 0px 0px 15px 0px #000000; 
     box-shadow: 0px 0px 15px 0px #000000;
 }
-.taskbar-time {
-	width: 60px;
-	text-align: center;
-}
+
 #icons {
 	position: absolute;
 	z-index: 10;
@@ -453,7 +444,7 @@ left: 10px;
 #window4 .wincontent {	width: 255px; height: 285px;	}
 #window5 .wincontent {	width: 640px; height: 480px;	}
 #window6 .wincontent {	width: 830px; height: 635px;	}
-#window7 .wincontent {	width: 312px; height: 265px;	}
+#window7 .wincontent {	width: 295px; height: 215px;	}
 
 
 @media screen and (max-width:960px){
