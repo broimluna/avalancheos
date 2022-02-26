@@ -104,19 +104,27 @@ input,select{vertical-align:middle}
     width: 100%;
 	background-color: #87bef7;
     background-image: url(../images/bg.jpg);
-	overflow: hidden;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
+      overflow: hidden;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+  }
+    
+    
+    
 .time {
   height: 30px;
   width: 75px;
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: transparent;
+  background-color: #2c2c2cad;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px 0px #000000; 
+  box-shadow: 0px 0px 15px 0px #000000;  
   overflow: hidden;
 
  
@@ -130,13 +138,14 @@ input,select{vertical-align:middle}
     height: 450px;
     left: 5px;
     right: 0;
-    bottom: 40px;
+    bottom: 70px;
     z-index: 2;
     overflow-x: hidden;
     overflow-y: hidden;
     transition: 0.5s;
     background-color: #2c2c2cad;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
     -webkit-box-shadow: 0px 0px 15px 0px #000000; 
     box-shadow: 0px 0px 15px 0px #000000;
@@ -170,21 +179,18 @@ input,select{vertical-align:middle}
 
 
 
-button {
+#apps {
     display: inline-block;
     border: transparent;
     border-radius: 5px;
     font-size: 15px;
-    /*padding: 1px 4px;*/
+    padding: 0px 5px;
     background: transparent;
     font-weight: bold;
     cursor: pointer;
-    height: 12px;
+    height: 0px;
     transform: scale(1.25); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
-
-
-
 
 a {
 color: white;
@@ -194,6 +200,7 @@ color: white;
     border: 2px solid #000;
     background: #eeeeee80;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border-radius: 7px;
     z-index: 1000;
 }
@@ -208,11 +215,11 @@ color: white;
     right: 0 !important;
     left: 0 !important;
     border-radius: 7px;
-    bottom: 32px !important;
+    bottom: 56px !important;
 }
 
 .window.fullSizeWindow .wincontent {
-	padding: 10px 10px;
+	padding: 0px 10px;
 }
 
 body {
@@ -325,49 +332,59 @@ left: 10px;
     line-height: 34px;
     font-size: 15px;
 }
-.taskbarPanel {
+.dockIcon {
     display: inline-block;
     border: 2px solid transparent;
     border-radius: 5px;
-    line-height: 18px;
+    line-height: 12px;
     font-size: 15px;
     margin: 0 10px;
     background: transparent;
     font-weight: bold;
     cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1.25);
     transition: 0.5s;
-    
-    
+    padding: 0 1px;
 }
-.taskbarPanel.activeTab {
-    background: transparent;
-    transform: scale(1.6);
+
+.dockIcon.activeTab {
+    transform: scale(1.38);
+    background-color: #2e2e2e;
 }
-.taskbarPanel.minimizedTab {
-    background: transparent;
-    transform: scale(1.5);
+
+.dockIcon:hover {
+    background: rgba(0, 0, 0, 0.3);
+    color: #FFF;
+}
+.dockIcon.minimizedTab {
+    transform: scale(1.25);
     transition: 0.5s;
 }
-.taskbarPanel.minimizedTab:hover {
-    background: transparent;
-    transform: scale(1.5);
+.dockIcon.minimizedTab:hover {
+    transform: scale(1.25);
 }
-.taskbarPanel.closed {
+.dockIcon.closed {
     display: none;
     transition: 0.5s;
     
 }
-#taskbar {
+#dock {
 	position: absolute;
-	height: 30px;
-	border-top: 2px solid #000;
+	height: 55px;
+    width: 50%;
+	border-top: 2px solid transparent;
 	bottom: 0;
 	left: 0;
 	right: 0;
+    margin: 0 auto;
 	background: #2c2c2cad;
+    border-radius: 10px;
     backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 	z-index: 99998;
+    transition: 1s;
+    -webkit-box-shadow: 0px 0px 15px 0px #000000; 
+    box-shadow: 0px 0px 15px 0px #000000;
 }
 .taskbar-time {
 	width: 60px;

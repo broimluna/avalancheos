@@ -13,7 +13,7 @@
     
 	<title>AvalancheOS</title>
 </head>
-<body>
+<body onload="startTime()">
 
 
 <div id="appsmenu" style="height: 0px;" onclick="appsoff()">
@@ -44,43 +44,43 @@
 
 	<div id="desktop">
         
-        <div class="window closed" data-html="true" icon="<img src='system/images/icons/paint-32x32.png' width='18' height='18'>" data-title="Paint">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/paint-32x32.png' width='34' height='34'>" data-title="Paint">
 		<iframe width="100%" height="100%" src="apps/jspaint/index.html"></iframe>
 		</div>
 
-		<div class="window closed" data-html="true" icon="<img src='system/images/icons/notepad-32x32.png' width='18' height='18'>" data-title="Notepad">
+		<div class="window closed" data-html="true" icon="<img src='system/images/icons/notepad-32x32.png' width='34' height='34'>" data-title="Notepad">
 		<iframe width="100%" height="100%" src="apps/notepad/index.html"></iframe>
 		</div>
 
-		<div class="window closed" data-html="true" icon="<img src='system/images/icons/minesweeper-32x32.png' width='18' height='18'>" data-title="Minesweeper">
+		<div class="window closed" data-html="true" icon="<img src='system/images/icons/minesweeper-32x32.png' width='34' height='34'>" data-title="Minesweeper">
 			<iframe width="100%" height="100%" src="apps/minesweeper/index.html"></iframe>
 		</div>
                                     
-        <div class="window closed" data-html="true" icon="<img src='system/images/icons/cal-32x32.png' width='18' height='18'>" data-title="Calendar">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/cal-32x32.png' width='34' height='34'>" data-title="Calendar">
 			<iframe width="100%" height="100%" src="apps/calendar/index.html"></iframe>
 		</div>
 
-        <div class="window closed" data-html="true" icon="<img src='system/images/icons/calc-32x32.png' width='18' height='18'>" data-title="Calculator">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/calc-32x32.png' width='34' height='34'>" data-title="Calculator">
 			<iframe width="100%" height="100%" src="apps/calc/index.html"></iframe>
 		</div>
 
-        <div class="window closed" data-html="true" icon="<img src='system/images/icons/bronze-32x32.png' width='18' height='18'>" data-title="Bronze Browser">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/bronze-32x32.png' width='34' height='34'>" data-title="Bronze Browser">
 			<iframe width="100%" height="100%" src="apps/bronze/index.html"></iframe>
 		</div>
 
-        <div class="window closed" data-html="true" icon="<img src='system/images/icons/hyperos-32x32.png' width='18' height='18'>" data-title="HyperOS">
+        <div class="window closed" data-html="true" icon="<img src='system/images/icons/hyperos-32x32.png' width='34' height='34'>" data-title="HyperOS">
 			<iframe width="100%" height="100%" src="apps/hyperos/index.html"></iframe>
         </div>
 
 
-		<div class="window opened" data-html="true" icon="<img src='system/images/icons/about-32x32.png' width='18' height='18'>" data-title="About AvalancheOS">
+		<div class="window opened" data-html="true" icon="<img src='system/images/icons/about-32x32.png' width='34' height='34'>" data-title="About AvalancheOS">
 			<iframe width="100%" height="100%" src="apps/about/index.html"></iframe>
         </div>
 		
                           
 		
-		<div id="taskbar">
-            <button onclick="appson();"><img border="0" alt="" src="system/images/sys_logo.png" width="40" height="24"></button>
+		<div id="dock">
+            <button id="apps" onclick="appson();"><img border="0" alt="" src="system/images/icons/apps.png" width="42" height="42"></button>
         </div>
 		
 		<div id="icons" class="desktopIcons">
@@ -93,16 +93,10 @@
 		   </center>
 		</div>
 		
-	</div>
+	</div>   
 
-
-
- 
-<body onload="startTime()">
-   
-
-   <div class="time">				
- <a><div id="time" class="right"></div></a>
+   <div class="time">
+	<a><div id="time" class="right"></div></a>				
     </div>
 
 
