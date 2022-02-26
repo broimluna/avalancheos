@@ -81,12 +81,12 @@ input,select{vertical-align:middle}
 
 #time { 
                 position:absolute;           
-                top:20px;
+                top:24px;
                 color: white;
                 font-family: Helvetica;
                 text-align: center;
                 width: 97%;
-                font-size: 14px;
+                font-size: 15px;
   }
  .right { 
                 right:0;
@@ -210,7 +210,7 @@ color: white;
     right: 0 !important;
     left: 0 !important;
     border-radius: 7px;
-    bottom: 56px !important;
+    bottom: 48px !important;
 }
 
 .window.fullSizeWindow .wincontent {
@@ -343,7 +343,7 @@ left: 10px;
 }
 
 .task.activeTab {
-    transform: scale(1.38);
+    transform: scale(1.45);
     background-color: #2e2e2e;
 }
 
@@ -352,11 +352,11 @@ left: 10px;
     color: #FFF;
 }
 .task.minimizedTab {
-    transform: scale(1.25);
+    transform: scale(1.35);
     transition: 0.5s;
 }
 .task.minimizedTab:hover {
-    transform: scale(1.25);
+    transform: scale(1.35);
 }
 .task.closed {
     display: none;
@@ -365,7 +365,7 @@ left: 10px;
 }
 #taskbar {
 	position: absolute;
-	height: 54px;
+	height: 45px;
 	border-top: 2px solid transparent;
 	bottom: 0;
 	left: 0;
