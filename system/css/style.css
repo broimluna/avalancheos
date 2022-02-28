@@ -270,7 +270,7 @@ body {
     left: 8px;
 }
 .winminimize > span {
-	border-bottom: 3px solid #000;
+	border-bottom: 2px solid #000;
 }
 .winmaximize > span {
 	border: 2px solid #000;
@@ -441,7 +441,7 @@ left: 10px;
 #window1 .wincontent {	width: 500px; height: 300px;	}
 #window2 .wincontent {	width: 282px; height: 350px;	}
 #window3 .wincontent {	width: 450px; height: 450px;	}
-#window4 .wincontent {	width: 255px; height: 285px;	}
+#window4 .wincontent {	width: 255px; height: 248px;	}
 #window5 .wincontent {	width: 640px; height: 480px;	}
 #window6 .wincontent {	width: 830px; height: 635px;	}
 #window7 .wincontent {	width: 295px; height: 215px;	}
