@@ -7,15 +7,24 @@ windowLeftPos = new Array,
 panel,
 id;
 
-function appson() {
-	document.getElementById("appsmenu").style.height = "450px";
+
+
+
+function appstoggle() {
+	document.getElementById("appsmenu").classList.toggle("opened");
 
 }
+$(document).ready(function(){
+	$("#appsmenu").click(function(){
+		document.getElementById("appsmenu").classList.toggle("opened");
+	  }, function(){
+		document.getElementById("appsmenu").classList.remove("opened");
+  
+	});
+  });
 
-function appsoff() {
-	document.getElementById("appsmenu").style.height = "0px";
 
-}
+
 
 function startTime(){
     var date = new Date();
