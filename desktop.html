@@ -8,7 +8,11 @@
 	<script src="system/js/jquery.js"></script>
 	<script src="system/js/jquery-ui.js"></script>
 	<script src="system/js/script.js"></script>	
-	<link rel="stylesheet" type="text/css" href="system/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="system/css/style.css"/>
+	<link rel="alternate stylesheet 1" type="text/css" title="theme1" href="system/css/themes/theme1.css">
+
+
+
     
     
 	<title>AvalancheOS</title>
@@ -27,7 +31,8 @@
                 <a class="openWindow" data-id="4"><img border="0" alt="" src="system/images/icons/calc-32x32.png" width="32" height="32"><br>Calculator</a>
                 <a class="openWindow" data-id="5"><img border="0" alt="" src="system/images/icons/bronze-32x32.png" width="32" height="32"><br>Bronze Browser</a>
                 <a class="openWindow" data-id="6"><img border="0" alt="" src="system/images/icons/hyperos-32x32.png" width="32" height="32"><br>HyperOS</a>
-                <a class="openWindow" data-id="7"><img border="0" alt="" src="system/images/icons/about-32x32.png" width="32" height="32"><br>About</a>
+                <a class="openWindow" data-id="7"><img border="0" alt="" src="system/images/icons/settings-32x32.png" width="32" height="32"><br>Settings</a>
+
                 </div>
     </center>
 
@@ -42,7 +47,7 @@
 
 
 
-	<div id="desktop">
+	<desktop>
         
         <div class="window closed" data-html="true" icon="<img src='system/images/icons/paint-32x32.png' width='25' height='25'>" data-title="Paint">
 		<iframe width="100%" height="100%" src="apps/jspaint/index.html"></iframe>
@@ -69,18 +74,46 @@
 		</div>
 
         <div class="window closed" data-html="true" icon="<img src='system/images/icons/hyperos-32x32.png' width='25' height='25'>" data-title="HyperOS">
-			<iframe width="100%" height="100%" src="apps/hyperos/index.html"></iframe>
+			<a target="hos" href="apps/hyperos/index.html">Home</a>
+			<iframe name="hos" width="100%" height="100%" src="apps/hyperos/index.html"></iframe>
         </div>
 
+		<div class="window closed" data-html="true" icon="<img src='system/images/icons/settings-32x32.png' width='25' height='25'>" data-title="Settings">
+			<div id="tabsettings">
+				<button id="settingsbutton" onclick="openTab('Customization')">Customization</button>
+				<button id="settingsbutton" onclick="openTab('About')">About</button>
+			</div>
+				<hr id="settingshr">
 
-		<div class="window opened" data-html="true" icon="<img src='system/images/icons/about-32x32.png' width='25' height='25'>" data-title="About AvalancheOS">
-			<iframe width="100%" height="100%" src="apps/about/index.html"></iframe>
-        </div>
+			<div id="Customization" class="tab">
+				<h1 id="settingsh1">Themes</h1>
+				<div id="themesrow">
+						<button id="settingsbutton" onclick="switch_style('default');return false;" name="Default Theme" value="Default Theme">Default Theme</button>
+						<button id="settingsbutton" onclick="switch_style('theme1');return false;" name="Theme 1" value="Theme 1">Classic Theme</button>
+
+				</div>
+			</div>
+			  
+			<div id="About" class="tab" style="display:none;text-align: center;">
+
+				<div id="abranding">
+				<img src="system/images/sys_logo.png" height="55" width="130"></img>
+                <a id="darktext">AvalancheOS</a>
+			    </div>
+
+                <hr id="settingshr">
+                <p>Version: 22M4</p>
+                <hr id="settingshr">
+                <p>Based on 'Windows' Template from <a target="blank" style="color: rgb(99, 99, 105);" href="https://html5-templates.com">html5-templates.com</a></p>
+			</div>
+
+		</div>
+
 		
                           
 		
 		<div id="taskbar">
-            <button id="apps" onclick="appstoggle();"><img border="0" alt="" src="system/images/sys_logo.png" width="52" height="32"></button>
+            <a id="apps" onclick="appstoggle();"><img border="0" alt="" src="system/images/sys_logo.png" width="52" height="32"></a>
         </div>
 		
 		<div id="icons" class="desktopIcons">
@@ -90,14 +123,17 @@
 			<a class="openWindow" data-id="3"><img border="0" alt="" src="system/images/icons/cal-32x32.png" width="32" height="32"><br>Calendar</a>
 			<a class="openWindow" data-id="4"><img border="0" alt="" src="system/images/icons/calc-32x32.png" width="32" height="32"><br>Calculator</a>
 			<a class="openWindow" data-id="5"><img border="0" alt="" src="system/images/icons/bronze-32x32.png" width="32" height="32"><br>Bronze<br>Browser</a>
+
 		   </center>
 		</div>
 		
-	</div>   
+	</desktop>   
 
-   <div class="time">
+   <div id="timecontainer">
 	<a><div id="time" class="time"></div></a>
 	</div>
+
+ <!-- <a id="watermark">AvalancheOS</a>-->
 </body>
 
 </html>

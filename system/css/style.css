@@ -1,6 +1,6 @@
 
 
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{text-align:center;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 body{line-height:1}
 h1 {font-size: 1.5em;margin-bottom: 10px;}
 p{font-size: 1em;line-height: 1.3em;margin-bottom: 10px;}
@@ -40,10 +40,7 @@ input,select{vertical-align:middle}
 
 ::-webkit-scrollbar {
     width: 0.4em !important;
-    scroll-behavior: smooth !important;
-}
-::-webkit-scrollbar:horizontal {
-    width: 0.4em !important;
+    height: 0.5em !important;
     scroll-behavior: smooth !important;
 }
 
@@ -57,16 +54,17 @@ input,select{vertical-align:middle}
     outline: 1px solid slategrey !important;
     border-radius: 10px !important;
 }
+::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 
-
-
-@import url('https://geocities.ws/rimet/rimetpad.css');
 
 .appsBtn, .appsHtxt {
     font-family: Arial, Helvetica, sans-serif;
 }
 .appsHtxt {
 	color: white;
+    text-align: center;
 }
 
 .appsBtn {
@@ -84,39 +82,83 @@ input,select{vertical-align:middle}
 
 #time { 
                 position:absolute;           
-                top:24px;
+                top:11px;
                 color: white;
                 font-family: Helvetica;
                 text-align: center;
                 width: 97%;
                 font-size: 15px;
-  }
+}
  .right { 
                 right:0;
- 
-            }
 
+ }
 
-
-
-
-#desktop {
+desktop {
 	font-family: Arial, Helvetica, sans-serif;
     position: fixed;
     height: 100%;
     width: 100%;
-	background-color: #87bef7;
+	background-color: #3bdefa;
     background-image: url(../images/bg.jpg);
-      overflow: hidden;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-  }
+    background-size: cover;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 1s;
+}
+
+#darktext {
+    color: black;
+}
+
+#settingsh1 {
+    font-size: 1.5em;
+    line-height: 10px;
+    margin: 15px 5px;
+
+}
+
+
+
+#settingsbutton {
+        border: 2px solid #000;
+        border-radius: 5px;
+        font-size: 15px;
+        /* padding: 1px 4px; */
+        background: #CCC;
+        font-weight: bold;
+        cursor: pointer;
+        height: 30px;
+        margin: 0px 2px;
+}
+
+#settingshr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #000;
+    margin: 0.5em 0 !important;
+    padding:0
+}
+#tabsettings {
+    overflow-y: scroll;
+    display: inline-flex;
+    width: 99%;
+    margin: 4px 0px;
+}
+#themesrow {
+    overflow-x: scroll;
+    display: flex;
+    height: 72%;
+    position: absolute;
+}
+
     
-    
-.time {
-  height: 55px;
+#timecontainer {
+  height: 42px;
   width: 75px;
   position: fixed;
   bottom: 0;
@@ -127,13 +169,57 @@ input,select{vertical-align:middle}
  
 }
 
+.themedropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.themedropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px 0px #000000; 
+  box-shadow: 0px 0px 15px 0px #000000;
+  padding: 12px 16px;
+  z-index: 1;
+  height: 200px;
+  top: 35px;
+  left: 5px;
+  overflow-y: scroll;
+}
+
+.themedropdown:hover .themedropdown-content {
+  display: block;
+}
+
+.themedropdown a {
+  border: 2px black solid;
+  padding: 5px 5px;
+  color: black;
+  border-radius: 5px;
+  display: block;
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+#window7 .ui-resizable-handle {
+    display: none !important;
+}
+#window7 .winmaximize {
+    display: none !important;
+}
+
 
 #appsmenu {
     position: fixed;
     margin: 0 auto;
     width: 450px;
     height: 0px;
-    left: 5px;
+    left: 0;
     right: 0;
     bottom: 55px;
     z-index: 2;
@@ -195,6 +281,7 @@ input,select{vertical-align:middle}
     transition: 0.5s;
 }
 
+
 #apps img:hover {
     background-color: rgba(0, 0, 0, 0.3);
     transition: 0.5s;
@@ -207,6 +294,11 @@ input,select{vertical-align:middle}
 a {
 color: white;
 }
+
+#window6 > .wincontent iframe {
+    height: calc(100% - 20px);
+}
+
 .window {
     position: absolute;
     border: 2px solid #000;
@@ -216,6 +308,8 @@ color: white;
     border-radius: 7px;
     z-index: 1000;
 }
+
+
 .window.closed {
 	display: none;
 }
@@ -332,12 +426,6 @@ left: 10px;
 	left: 0px;
 }
 
-
-
-    
-
-
-
 .windowHeader > strong {
     float: left;
     margin: -4px 0 0 3px;
@@ -358,6 +446,7 @@ left: 10px;
     transition: 0.5s;
     padding: 0 1px;
 }
+
 
 .task.activeTab {
     transform: scale(1.45);
@@ -396,6 +485,7 @@ left: 10px;
     transition: 1s;
     -webkit-box-shadow: 0px 0px 15px 0px #000000; 
     box-shadow: 0px 0px 15px 0px #000000;
+    text-align: center;
 }
 
 #icons {
@@ -421,7 +511,7 @@ left: 10px;
 #watermark {
     position: absolute;
     display: inline-block;
-    bottom: 30px;
+    bottom: 60px;
     right: 20px;
     font-weight: bold;
     font-size: 15px;
@@ -431,7 +521,13 @@ left: 10px;
 
 }
 
+#abranding {
+    display: inline-flex;
+   align-items:center;
+   font-size: 1.6em;
+   font-weight: bold;
 
+}
 
 
 
@@ -462,7 +558,9 @@ left: 10px;
 #window4 .wincontent {	width: 255px; height: 248px;	}
 #window5 .wincontent {	width: 640px; height: 480px;	}
 #window6 .wincontent {	width: 830px; height: 635px;	}
-#window7 .wincontent {	width: 295px; height: 215px;	}
+#window7 .wincontent {	width: 325px; height: 325px;	}
+
+
 
 
 @media screen and (max-width:960px){

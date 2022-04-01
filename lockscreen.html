@@ -11,6 +11,7 @@
 
 body {
     background-image: url(system/images/bg.jpg);
+    background-size: cover;
 }
 
 
@@ -42,7 +43,6 @@ p {
                 position:absolute;                  
                 bottom:0;                          
                 left:0;
-                margin: 0px;
  
             }
      .left { 
@@ -108,11 +108,6 @@ p {
         window.location.replace("desktop.html");
     }
      });
-     document.body.addEventListener("keydown", function (event) {
-    if (event.keyCode === 67) {
-        window.location.replace("countdown.html");
-    }
-     });
     </script>
 
 
@@ -152,7 +147,6 @@ function checkTime(i) {
 <body onload="startTime()">
 
  <h2><div id="time"></div></h2>
- <h1 id="left">Press C for the Countdown.</h1>
   
 
 </html>
