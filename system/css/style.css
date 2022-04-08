@@ -122,9 +122,8 @@ desktop {
 }
 
 
-
 #settingsbutton {
-        border: 2px solid #000;
+        border: 2px solid #2C2C2B;
         border-radius: 5px;
         font-size: 15px;
         /* padding: 1px 4px; */
@@ -139,7 +138,7 @@ desktop {
     display:block;
     height:1px;
     border:0;
-    border-top:1px solid #000;
+    border-top:1px solid #2C2C2B;
     margin: 0.5em 0 !important;
     padding:0
 }
@@ -159,7 +158,7 @@ desktop {
     
 #timecontainer {
   height: 42px;
-  width: 75px;
+  width: 74px;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -267,6 +266,7 @@ desktop {
 
 
 
+
 #apps {
     display: inline-block;
     border: transparent;
@@ -301,7 +301,7 @@ color: white;
 
 .window {
     position: absolute;
-    border: 2px solid #000;
+    border: 2px solid #2C2C2B;
     background: #eeeeee80;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -381,11 +381,11 @@ body {
     left: 8px;
 }
 .winminimize > span {
-	border-bottom: 2px solid #000;
+	border-bottom: 2px solid #2C2C2B;
 }
 .winmaximize > span {
-	border: 2px solid #000;
-	border-top: 3px solid #000;
+	border: 2px solid #2C2C2B;
+	border-top: 3px solid #2C2C2B;
 }
 .winmaximize > span:nth-child(2) {
 	display: none;

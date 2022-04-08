@@ -82,7 +82,6 @@ function openTab(tabName) {
   }
 
 
-
 function appstoggle() {
 	document.getElementById("appsmenu").classList.toggle("opened");
 }
@@ -95,7 +94,7 @@ $(document).ready(function(){
 	});
   });
 
-
+  
 
 
 function startTime(){
