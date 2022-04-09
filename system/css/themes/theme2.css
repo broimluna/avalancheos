@@ -11,6 +11,13 @@
 }
 
 
+.appsHtxt {
+    text-align: unset !important;
+    margin: 15px 10px;
+}
+.appsHtxt::before {
+    content: "Start";
+}
 
 
 #appsmenu {

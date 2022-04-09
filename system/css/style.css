@@ -66,6 +66,9 @@ input,select{vertical-align:middle}
 	color: white;
     text-align: center;
 }
+.appsHtxt::before {
+    content: "Apps";
+}
 
 .appsBtn {
     top: 1px;
