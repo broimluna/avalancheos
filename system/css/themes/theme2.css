@@ -42,6 +42,22 @@
 #appicons {
 	left: 5px;
 }
+#appicons a {
+    margin: 1px 0;
+    display: inline-table;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-decoration: none;
+    background: #00000040;
+    
+}
+#appicons a:hover {
+	
+    background: #00000024;
+	color: #FFF;
+
+}
 
 #icons {
     display: none;
