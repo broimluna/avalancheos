@@ -89,19 +89,16 @@
     padding: 2px;
     border-radius: 5px;
     cursor: move;
-    height: 25px;
+    height: 0px;
 }
+
 
 .winmaximize {
     display: none !important;
 }
 
-.winminimize {
-    display: none !important;
-}
 
 .task {
-    display: none;
     border: 2px solid transparent;
     border-radius: 5px;
     line-height: 12px;
