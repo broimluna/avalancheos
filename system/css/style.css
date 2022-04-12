@@ -292,6 +292,7 @@ desktop {
 }
 #apps img {
     transition: 0.5s;
+    margin: 0px 5px;
 }
 
 a {
@@ -334,12 +335,12 @@ color: white;
 body {
 	overflow: hidden;
 }
-.btmButtons {
+.powerOptions {
 	position: absolute;
 	bottom: 2px;
 	right: 15px;
 }
-.btmButtons a {
+.powerOptions a {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: transparent;
 }
@@ -430,9 +431,16 @@ left: 10px;
 }
 
 .windowHeader > strong {
-    float: left;
-    margin: -4px 0 0 3px;
-    line-height: 34px;
+    color: black;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    background: none !important;
+    top: 14px;
+    padding-left: 0px !important;
+    float: unset;
+    margin: unset;
+    line-height: unset;
+    position: absolute;
     font-size: 15px;
 }
 .task {
