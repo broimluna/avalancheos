@@ -217,6 +217,9 @@ desktop {
 #window4 .winmaximize {
     display: none !important;
 }
+#window4 .ui-resizable-handle {
+    display: none !important;
+}
 
 
 #appsmenu {
