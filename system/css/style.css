@@ -214,6 +214,9 @@ desktop {
 #window7 .winmaximize {
     display: none !important;
 }
+#window4 .winmaximize {
+    display: none !important;
+}
 
 
 #appsmenu {
