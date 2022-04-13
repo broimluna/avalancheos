@@ -11,7 +11,9 @@
 #appicons a {
     transition: 0s;
 }
-
+.currenttheme::before {
+    content: "Classic";
+}
 #taskbar {
     text-align: unset;
     position: absolute;

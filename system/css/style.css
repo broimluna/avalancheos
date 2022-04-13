@@ -158,6 +158,9 @@ desktop {
     position: absolute;
 }
 
+.currenttheme::before {
+    content: "Default";
+}
     
 #timecontainer {
   height: 42px;

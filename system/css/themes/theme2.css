@@ -45,7 +45,9 @@
       height: 100% !important;
   }
   
-  
+  .currenttheme::before {
+    content: "Metro";
+  }
   
   #appicons {
       left: 5px;
@@ -125,7 +127,9 @@
       display: none !important;
   }
   
-  
+  .windowHeader strong {
+      font-weight: normal;
+  }
   .task {
       border: 2px solid transparent;
       border-radius: 5px;
