@@ -94,6 +94,16 @@ $(document).ready(function(){
 	});
   });
 
+  var changeBG = function(event) {
+    var output = document.getElementById('desktopbg');
+    output.style.backgroundImage= "url("+URL.createObjectURL(event.target.files[0])+")";
+  };
+
+  var resetBG = function(event) {
+	var output = document.getElementById('desktopbg');
+	output.style.backgroundImage= "url(system/images/bg.jpg)";
+
+  }
   
 
 

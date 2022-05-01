@@ -50,7 +50,7 @@
 
 
 
-	<desktop>
+	<desktop id="desktopbg">
         
         <div class="window closed" data-html="true" icon="<img src='system/images/icons/paint-32x32.png' width='25' height='25'>" data-title="Paint">
 		<iframe width="100%" height="100%" src="apps/jspaint/index.html"></iframe>
@@ -94,9 +94,15 @@
 						<button id="settingsbutton" onclick="switch_style('default');return false;" name="Default Theme" value="Default Theme">Default</button>
 						<button id="settingsbutton" onclick="switch_style('theme1');return false;" name="Theme 1" value="Theme 1">Classic</button>
 						<button id="settingsbutton" onclick="switch_style('theme2');return false;" name="Theme 2" value="Theme 2">Metro</button>
+						
 
 
 				</div>
+				<br><br>
+				<hr id="settingshr">
+				<h1 id="settingsh1">Background</h1>
+				<input id="inputbtn" type="file" accept="image/*" onchange="changeBG(event)" style="margin: 2px 0px;">				<button id="settingsbutton" onclick="resetBG(event)">Reset to default</button>
+
 			</div>
 			  
 			<div id="About" class="tab" style="display:none;text-align: center;">
@@ -107,7 +113,7 @@
 			    </div>
 
                 <hr id="settingshr">
-                <p>Version: 22M4</p>
+                <p>Version: 22M5</p>
                 <hr id="settingshr">
                 <p>Based on 'Windows' Template from <a target="blank" style="color: rgb(99, 99, 105);" href="https://html5-templates.com">html5-templates.com</a></p>
 				<p>Current theme: <a id="darktext" class="currenttheme"></a></p>
@@ -142,7 +148,7 @@
 	</desktop>   
 
 	
- <!--<a id="watermark">AvalancheOS</a>-->
+ <!--<a id="watermark">AvalancheOS</a>
 </body>
 
 </html>

@@ -154,7 +154,7 @@ desktop {
 #themesrow {
     overflow-x: scroll;
     display: flex;
-    height: 72%;
+    width: 99%;   
     position: absolute;
 }
 
@@ -173,6 +173,8 @@ desktop {
 
  
 }
+
+
 
 .themedropdown {
   position: relative;
@@ -548,7 +550,6 @@ left: 10px;
    font-weight: bold;
 
 }
-
 
 
 
