@@ -10,9 +10,9 @@ id;
 
 // *** TO BE CUSTOMISED ***
 
-var style_cookie_name = "style" ;
+var style_cookie_name = "theme" ;
 var style_cookie_duration = 30 ;
-var style_domain = "glitch.me" ;
+var style_domain = "bitstechs.github.io" ;
 
 // *** END OF CUSTOMISABLE SECTION ***
 // You do not need to customise anything below this line
@@ -85,6 +85,7 @@ function openTab(tabName) {
 function appstoggle() {
 	document.getElementById("appsmenu").classList.toggle("opened");
 }
+
 $(document).ready(function(){
 	$("#appsmenu").click(function(){
 		document.getElementById("appsmenu").classList.toggle("opened");
@@ -94,18 +95,33 @@ $(document).ready(function(){
 	});
   });
 
+  
+
   var changeBG = function(event) {
     var output = document.getElementById('desktopbg');
     output.style.backgroundImage= "url("+URL.createObjectURL(event.target.files[0])+")";
+	
   };
 
   var resetBG = function(event) {
 	var output = document.getElementById('desktopbg');
-	output.style.backgroundImage= "url(system/images/bg.jpg)";
+	output.style.backgroundImage= "";
 
   }
   
-
+  function enableWatermark() {
+	// Get the checkbox
+	var checkBox = document.getElementById("waterCheck");
+	// Get the output text
+	var text = document.getElementById("watermark");
+	// If the checkbox is checked, display the output text
+	if (checkBox.checked == true){
+	  text.style.display = "inline-block";
+	} else {
+	  text.style.display = "none";
+	}
+  }
+  
 
 function startTime(){
     var date = new Date();
