@@ -75,7 +75,7 @@ input,select{vertical-align:middle}
 }
     
 .currentversion::before {
-    content: "Dev Puma 32700.1";
+    content: "22700.52";
 }
 
 .appsBtn {
@@ -595,7 +595,7 @@ left: 10px;
 }
 #watermark {
     position: absolute;
-    display: inline-block;
+    display: none;
     bottom: 60px;
     right: 20px;
     font-weight: bold;
