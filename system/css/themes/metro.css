@@ -15,6 +15,7 @@
       text-align: unset !important;
       margin: 15px 10px;
       font-size: 28px;
+      color: white;
   }
   .appsHtxt::before {
       content: "Start";
@@ -51,21 +52,24 @@
   
   #appicons {
       left: 5px;
+      height: 80%;
   }
   #appicons a {
       margin: 1px 0;
       display: inline-table;
       cursor: pointer;
       padding: 10px 15px;
-      font-family: Arial, Helvetica, sans-serif; 
+      font-family: Arial, Helvetica, sans-serif;
       text-decoration: none;
+      color: white;
       background: #00000040;
-      
+      border-radius: 0px;
   }
   #appicons a:hover {
       
       background: #00000024;
       color: #FFF;
+      border-radius: 0px;
   
   }
   
@@ -74,11 +78,7 @@
   }
   
   
-  .powerOptions {
-	position: absolute;
-	top: 15px;
-	right: 15px;
-}
+
   
   
   
@@ -159,15 +159,7 @@
       overflow: hidden;
   }
   
-  .task.activeTab {
-      transform: scale(1.45);
-      background-color: #2e2e2e;
-  }
-  
-  .task:hover {
-      background: rgba(0, 0, 0, 0.3);
-      color: #FFF;
-  }
+
   .task.minimizedTab {
       transform: scale(1.35);
       transition: 0.5s;

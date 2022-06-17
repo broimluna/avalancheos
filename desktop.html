@@ -11,8 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="system/css/default.css"/>
 	<link rel="alternate stylesheet 1" type="text/css" title="theme1" href="system/css/themes/classic.css">
 	<link rel="alternate stylesheet 2" type="text/css" title="theme2" href="system/css/themes/metro.css">
-	<link rel="alternate stylesheet 3" type="text/css" title="lighttheme" href="system/css/themes/defaultlight.css">
-
+	<link rel="alternate stylesheet 3" type="text/css" title="darktheme" href="system/css/themes/defaultdark.css">
+	<link rel="alternate stylesheet 4" type="text/css" title="macos" href="system/css/themes/dock.css">
+	<link rel="alternate stylesheet 5" type="text/css" title="modern" href="system/css/themes/modern.css">
+	<audio src="system/sounds/startup.wav" autoplay></audio>
 
 
 
@@ -22,12 +24,14 @@
 </head>
 <body onload="startTime()">
 
+	
 
+	  
 <div id="appsmenu">
-	<h1 class="appsHtxt"></h1>	
-    <center>
+	<h1 class="appsHtxt"></h1>
 		<div id="appicons">
-                <a class="openWindow" data-id="0"><img border="0" alt="" src="system/images/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>
+			<center>
+		        <a class="openWindow" data-id="0"><img border="0" alt="" src="system/images/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>
                 <a class="openWindow" data-id="1"><img border="0" alt="" src="system/images/icons/notepad-32x32.png" width="32" height="32"><br>Notepad</a>
                 <a class="openWindow" data-id="2"><img border="0" alt="" src="system/images/icons/minesweeper-32x32.png" width="32" height="32"><br>Minesweeper</a>
                 <a class="openWindow" data-id="3"><img border="0" alt="" src="system/images/icons/cal-32x32.png" width="32" height="32"><br>Calendar</a>
@@ -35,14 +39,15 @@
                 <a class="openWindow" data-id="5"><img border="0" alt="" src="system/images/icons/bronze-32x32.png" width="32" height="32"><br>Bronze Browser</a>
                 <a class="openWindow" data-id="6"><img border="0" alt="" src="system/images/icons/hyperos-32x32.png" width="32" height="32"><br>HyperOS</a>
                 <a class="openWindow" data-id="7"><img border="0" alt="" src="system/images/icons/settings-32x32.png" width="32" height="32"><br>Settings</a>
-
-                </div>
-    </center>
+				
+			</center>
+        </div>
 
     
 
   <div class="bottomBtns">
-	<a href='https://discord.gg/HpHWuanm4C'><img src="system/images/icons/discord.png" height="32" width="32" title="Join the Discord!"></a>
+	<a target="_blank" href='https://discord.gg/HpHWuanm4C'><img src="system/images/icons/discord.png" height="32" width="32" title="Join the Discord!"></a>
+	<a target="_blank" href='https://github.com/broimluna'><img src="system/images/icons/github.png" height="32" width="32" title="Follow my GitHub!"></a>
     <a href='lockscreen.html'><img src="system/images/icons/logoff-32x32.png" height="32" width="32" title="Logs off the User"></a>
     <a href='index.html'><img src="system/images/icons/shutdown-32x32.png" height="32" width="32" title="Shut's down the PC."></a>
   </div>
@@ -93,9 +98,12 @@
 				<h1 id="settingsh1">Themes</h1>
 				<div id="themesrow">
 						<button id="settingsbutton" onclick="switch_style('default');return false;" name="Default Theme" value="Default Theme">Default</button>
-						<button id="settingsbutton" onclick="switch_style('lighttheme');return false;" name="Light Theme" value="Light Theme">Light Mode</button>
+						<button id="settingsbutton" onclick="switch_style('darktheme');return false;" name="Dark Theme" value="Dark Theme">Dark</button>
 						<button id="settingsbutton" onclick="switch_style('theme1');return false;" name="Theme 1" value="Theme 1">Classic</button>
 						<button id="settingsbutton" onclick="switch_style('theme2');return false;" name="Theme 2" value="Theme 2">Metro</button>
+						<button id="settingsbutton" onclick="switch_style('macos');return false;" name="Theme 3" value="Theme 3">Dock</button>
+						<button id="settingsbutton" onclick="switch_style('modern');return false;" name="Theme 4" value="Theme 4">Modern</button>
+
 						
 
 
@@ -108,14 +116,14 @@
 				<br>
 				<hr id="settingshr">
 				<h1 id="settingsh1">Other</h1>
-				<input type="checkbox" id="waterCheck" onclick="enableWatermark()">Enable the watermark</input>
+				<input type="checkbox" id="waterCheck" onclick="enableWatermark()" disabled="disabled" checked>Enable the watermark</input>
 				<br>
 			</div>
 			  
 			<div id="About" class="tab" style="display:none;text-align: center;">
 
 				<div id="abranding">
-				<img src="system/images/sys_logo.png" height="55" width="130"></img>
+				<img src="system/images/sys_logo.png" height="55" width="105"></img>
                 <a id="darktext">AvalancheOS</a>
 			    </div>
 
@@ -133,12 +141,14 @@
 			</div>
 
 		</div>
+		
 
 		
                           
 		
 		<div id="taskbar">
             <a id="apps" onclick="appstoggle();"><img border="0" alt="" src="system/images/sys_logo.png" width="52" height="32"></a>
+			
 			<div id="timecontainer">
 				<a><div id="time" class="time"></div></a>
 				</div>
@@ -158,6 +168,17 @@
 		   </center>
 		</div>
 		
+			<div id="contextMenu" class="context-menu" style="display: none">
+			<ul>
+				<li class="openWindow" data-id="7">Open Settings</li>
+				<li onclick="location.reload(true);">Reload AvalancheOS</li>
+				<li onclick="activatefull(document.documentElement);">Activate Fullscreen</li>
+				<li onclick="deactivatefull();">Deactivate Fullscreen</li>
+				
+
+			</ul>
+			</div> 
+
 	</desktop>   
 
 	

@@ -1,0 +1,181 @@
+.appsHtxt {
+	color: white;
+    text-align: center;
+}
+
+
+
+
+
+
+#time { 
+                
+	color: white;
+                
+}
+
+
+desktop {
+	
+    background-image: url(../../images/bgs/bgdark.jpg);
+    
+}
+
+
+.currenttheme::before {
+    content: "Default (Dark)";
+}
+    
+
+
+.themedropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px 0px #000000; 
+  box-shadow: 0px 0px 15px 0px #000000;
+  padding: 12px 16px;
+  z-index: 1;
+  height: 200px;
+  top: 35px;
+  left: 5px;
+  overflow-y: scroll;
+}
+
+.themedropdown:hover .themedropdown-content {
+  display: block;
+}
+
+.themedropdown a {
+  border: 2px black solid;
+  padding: 5px 5px;
+  color: black;
+  border-radius: 5px;
+  display: block;
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+#window7 .ui-resizable-handle {
+    display: none !important;
+}
+#window7 .winmaximize {
+    display: none !important;
+}
+#window4 .winmaximize {
+    display: none !important;
+}
+#window4 .ui-resizable-handle {
+    display: none !important;
+}
+
+
+#appsmenu {
+    
+	background-color: #2c2c2cad;
+    
+}
+
+
+
+
+
+#appicons a {
+    
+    color: white;
+    
+}
+#appicons a:hover {
+	moz-border-radius:3px; 
+    -webkit-border-radius:3px;
+    background: #0000007a;
+    border: 1px solid black;
+    transition: 0.1s;
+}
+
+
+
+
+
+
+
+
+
+#apps img:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+a {
+color: white;
+}
+h1 {
+    color: white;
+    }
+
+#window6 > .wincontent iframe {
+    height: calc(100% - 20px);
+}
+
+.window {
+   
+    background: #eeeeee80;
+    
+}
+
+
+
+
+
+
+body {
+	overflow: hidden;
+}
+
+
+.fullSizeWindow .ui-resizable-handle {
+	display: none;
+}
+
+
+
+.windowHeader > span:hover {
+	background: rgba(255,255,255,0.3);
+}
+
+
+
+
+.task.activeTab {
+    transform: scale(1.45);
+    background-color: #2e2e2e;
+}
+
+.task:hover {
+    background: rgba(0, 0, 0, 0.3);
+    color: #FFF;
+}
+#taskbar {
+	background: #2c2c2cad;
+}
+
+#icons a:hover {
+	background: rgba(0, 0, 0, 0.3);
+	color: #FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -146,6 +146,7 @@ body {
 .menu-popup {
 	background: white;
 	padding: 8px 0;
+	border-radius: 10px;
 }
 
 /*.menu-item {
