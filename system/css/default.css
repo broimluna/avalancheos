@@ -73,9 +73,11 @@ input,select{vertical-align:middle}
 .currenttheme::before {
     content: "Default";
 }
-    
 .currentversion::before {
-    content: "22700.53";
+    content: "22M7";
+}    
+.currentbuild::before {
+    content: "22700.61";
 }
 
 .appsBtn {
