@@ -366,8 +366,8 @@ body > .window-titlebar {
 
 
 .menus {
-	color: rgb(0, 0, 0);
-	color: var(--MenuText);
+	color: white;
+	color: white;
 }
 .os-window:not(.focused) .menus {
 	color: rgb(128, 128, 128);

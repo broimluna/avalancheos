@@ -1,39 +1,107 @@
-<html>
-  <head>
-    <meta http-equiv="refresh" content="2;url=lockscreen.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="system/js/script.js"></script>	
+	<link rel="stylesheet" type="text/css" href="system/css/style.css" />
+	<title>AvalancheOS</title>
+</head>
+<body onload="startTime()">
 
-    </script>
+	<div id="desktop">
+		
+		<div class="window closed" data-html="true" icon="<img src='system/img/icons/paint-32x32.png' width='25' height='25'>" data-title="Paint">
+			<iframe width="100%" height="100%" src="apps/jspaint/index.html"></iframe>
+			</div>
+	
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/notepad-32x32.png' width='25' height='25'>" data-title="Notepad">
+			<iframe width="100%" height="100%" src="apps/notepad/index.html"></iframe>
+			</div>
+	
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/minesweeper-32x32.png' width='25' height='25'>" data-title="Minesweeper">
+				<iframe width="100%" height="100%" src="apps/minesweeper/index.html"></iframe>
+			</div>
+										
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/cal-32x32.png' width='25' height='25'>" data-title="Calendar">
+				<iframe width="100%" height="100%" src="apps/calendar/index.html"></iframe>
+			</div>
+	
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/calc-32x32.png' width='25' height='25'>" data-title="Calculator">
+				<iframe width="100%" height="100%" src="apps/calc/index.html"></iframe>
+			</div>
+	
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/bronze-32x32.png' width='25' height='25'>" data-title="Bronze Browser">
+				<iframe width="100%" height="100%" src="apps/bronze/index.html"></iframe>
+			</div>
+	
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/hyperos-32x32.png' width='25' height='25'>" data-title="HyperOS">
+				<a target="hos" href="apps/hyperos/index.html">Home</a>
+				<iframe name="hos" width="100%" height="100%" src="apps/hyperos/index.html"></iframe>
+			</div>
+		
+		<div id="taskbar">
+			<button class="appsPanel" onclick="appstoggle()"><img src='system/img/sys_logo.png' width='44' height='28'></button>
+			<a id="time"></a>
+		</div>
+		
+		<div id="icons">
+		  <center>
+			<a class="openWindow" data-id="0"><img border="0" alt="" src="system/img/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>  
+			<a class="openWindow" data-id="1"><img border="0" alt="" src="system/img/icons/notepad-32x32.png" width="32" height="32"><br>Notepad</a>
+			<a class="openWindow" data-id="3"><img border="0" alt="" src="system/img/icons/cal-32x32.png" width="32" height="32"><br>Calendar</a>
+			<a class="openWindow" data-id="5"><img border="0" alt="" src="system/img/icons/bronze-32x32.png" width="32" height="32"><br>Bronze<br>Browser</a>
+		  </center>      
+		</div>
+		
+		
+		<div id="appsmenu">
+			<h1 class="appsHtxt">Apps</h1>
+				<div id="appicons">
+					<center>
+						<a class="openWindow" data-id="0"><img border="0" alt="" src="system/img/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>
+						<a class="openWindow" data-id="1"><img border="0" alt="" src="system/img/icons/notepad-32x32.png" width="32" height="32"><br>Notepad</a>
+						<a class="openWindow" data-id="2"><img border="0" alt="" src="system/img/icons/minesweeper-32x32.png" width="32" height="32"><br>Minesweeper</a>
+						<a class="openWindow" data-id="3"><img border="0" alt="" src="system/img/icons/cal-32x32.png" width="32" height="32"><br>Calendar</a>
+						<a class="openWindow" data-id="4"><img border="0" alt="" src="system/img/icons/calc-32x32.png" width="32" height="32"><br>Calculator</a>
+						<a class="openWindow" data-id="5"><img border="0" alt="" src="system/img/icons/bronze-32x32.png" width="32" height="32"><br>Bronze Browser</a>
+						<a class="openWindow" data-id="6"><img border="0" alt="" src="system/img/icons/hyperos-32x32.png" width="32" height="32"><br>HyperOS</a>
+						
+					</center>
+				</div>
+				<div class="bottomBtns">
+					<a target="_blank" href='https://discord.gg/HpHWuanm4C'><img src="system/img/icons/discord.png" height="32" width="32" title="Join the Discord!"></a>
+					<a class="btmbtninvert" target="_blank" href='https://github.com/broimluna'><img src="system/img/icons/github.png" height="32" width="32" title="Follow my GitHub!"></a>
+				  </div>
+		</div>
 
-    <title>Startup</title>
-    <style>
-      body {
-        background-color: black;
-      }
-      .startlogo {
-  position: absolute;
-  top: 25%;
-  width: 99%;
-  text-align: center;
-  font-size: 18px;
-}
-      .loadinglogo {
-  position: absolute;
-  top: 75%;
-  width: 99%;
-  text-align: center;
-  font-size: 18px;
-}
-    </style>
-  </head>
-  
-  <body>
-      <div class="startlogo">
-        <img src="system/images/sys_logo.png" width="250px" alt="" />
-    </div>
-        <div class="loadinglogo">
-        <img src="system/images/loading.gif" width="150px" alt="" />
-    </div>
+		<div id="contextMenu" class="context-menu" style="display: none; left: 140px; top: 421px;">
+			<ul>
+				<li onclick="window.location.reload(true);">Reload AvalancheOS</li>
+				<li onclick="activatefull(document.documentElement);">Activate Fullscreen</li>
+				<li onclick="deactivatefull();">Deactivate Fullscreen</li>
+				
 
-  </body>
+			</ul>
+			</div>
+
+			<div id="startup">
+				<div class="startuplogo">
+					<img src="system/img/sys_logo.png" width="250px" alt="" />
+				</div>
+					<div class="startupload">
+					<img src="system/img/loading.gif" width="150px" alt="" />
+				</div>
+			</div>
+
+	</div>
+	
+	<a id="watermark">AvalancheOS<br>Build 1200</a>
+
+</body>
+
 </html>
