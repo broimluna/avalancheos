@@ -1,7 +1,7 @@
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 body{line-height:1;	font-family: Arial, Helvetica, sans-serif;color:white;}
 h1 {font-size: 1.5em;margin-bottom: 10px;}
-p{font-size: 1em;line-height: 1.3em;margin-bottom: 10px;}
+p{font-size: 15px;line-height: 1.3em;margin-bottom: 10px;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 nav ul{list-style:none}
 blockquote,q{quotes:none}
@@ -32,14 +32,18 @@ input,select{vertical-align:middle}
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #555;
 }
-  .appsHtxt {
+  #appsHtxt {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: center;
     margin: 12px 0px;
 }
 
-#desktop {
+#main {
+    transition: 0.5s;
+}
+
+desktop {
 	font-family: Arial, Helvetica, sans-serif;
     position: fixed;
     height: 100%;
@@ -51,6 +55,7 @@ input,select{vertical-align:middle}
     bottom: 0;
     left: 0;
     right: 0;
+    transition: 0.2s;
 }
 #time { 
     position: absolute;           
@@ -79,20 +84,17 @@ input,select{vertical-align:middle}
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border-top-right-radius: 10px;
-    -webkit-box-shadow: 0px 0px 15px 0px #000000;
-    box-shadow: 0px 0px 15px 0px #000000;
 }
 
 #appsmenu.opened {
-    height: 415px; 
+    height: 390px; 
 }
-
 
 #appicons {
 	background:transparent; 
     border:solid 1px transparent; 
     margin: 7px 0 7px 7px;
-    height: 78%;
+    height: 80%;
     overflow-y: scroll;
     float:left; 
     display:block; 
@@ -125,6 +127,46 @@ input,select{vertical-align:middle}
 #appicons a br {
     display: none;
 }
+
+#settingsbar {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    /* margin: 0 auto; */
+    width: 1px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 90%;
+    right: 0;
+    z-index: 2;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+    background-color: #00000085;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#settingsbar:hover {
+    width: 400px; 
+}
+
+#settingsbar #abranding {
+        display: inline-flex;
+       align-items:center;
+       font-size: 1.6em;
+       font-weight: bold; 
+}
+
+.tab {
+    padding: 10px;
+}
+#tabsettings {
+    padding: 10px 10px;
+}
+
+
 .context-menu {
     position: absolute;
     text-align: center;
@@ -194,6 +236,19 @@ input,select{vertical-align:middle}
     text-align: center;
     font-size: 18px;
   }
+  button {
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 1px 4px;
+    background: #CCC;
+    font-weight: bold;
+    cursor: pointer;
+    height: 30px;
+    margin: -5px 0px;
+  }
+
+
 .window {
     position: absolute;
     border: 2px solid #000;
@@ -325,8 +380,8 @@ input,select{vertical-align:middle}
     margin:0px 0px;
 }
 .appsPanel img:hover {
-    background: rgba(0, 0, 0, 0.3);
-    transition: 0.5s;
+background: rgba(0, 0, 0, 0.5);
+transition: 0.5s;
 }
 .taskbarPanel:hover{
     background: rgba(0, 0, 0, 0.3);
@@ -361,7 +416,7 @@ input,select{vertical-align:middle}
 }
 #icons {
 	position: absolute;
-	z-index: 10;
+	z-index: 1;
 	top: 20px;
 	left: 20px;
 }
@@ -412,7 +467,7 @@ input,select{vertical-align:middle}
 #window4 .wincontent {	width: 255px; height: 248px;	}
 #window5 .wincontent {	width: 640px; height: 480px;	}
 #window6 .wincontent {	width: 830px; height: 635px;	}
-#window7 .wincontent {	width: 325px; height: 325px;	}
+#window7 .wincontent {	width: 376px; height: 356px;	}
 
 
 

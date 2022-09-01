@@ -6,13 +6,17 @@ windowLeftPos = new Array,
 panel,
 id;
 
+
+
 setTimeout(function(){
     $("#startup").fadeOut(400);
+	document.getElementById("startupsnd").play(); 
 }, 2000)
 
 $(function() {
 	$(".openWindow").draggable();
   });
+  
 
 function startTime(){
     var date = new Date();
@@ -94,9 +98,66 @@ function deactivatefull() {
 	}
 }
 
+function openTab(tabName) {
+var i;
+var x = document.getElementsByClassName("tab");
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";
+}
+document.getElementById(tabName).style.display = "block";
+}
+
+$(document).ready(function(){
+	$("#appsmenu").click(function(){
+		document.getElementById("appsmenu").classList.toggle("opened");
+	  }, function(){
+		document.getElementById("appsmenu").classList.remove("opened");
+  
+	});
+  });			
+
+  var changeBG = function(event) {
+    var output = document.getElementById('desktopbg');
+    output.style.backgroundImage= "url("+URL.createObjectURL(event.target.files[0])+")";
+	
+  };
+
+  var resetBG = function(event) {
+	var output = document.getElementById('desktopbg');
+	output.style.backgroundImage= "";
+
+  }
+  
+  function enableWatermark() {
+	// Get the checkbox
+	var checkBox = document.getElementById("waterCheck");
+	// Get the output text
+	var text = document.getElementById("watermark");
+	// If the checkbox is checked, display the output text
+	if (checkBox.checked == true){
+	  text.style.display = "inline-block";
+	} else {
+	  text.style.display = "none";
+	}
+  }
+  function invertColors() {
+	// Get the checkbox
+	var checkBox = document.getElementById("colorCheck");
+	// Get the output text
+	var text = document.getElementById("main");
+	// If the checkbox is checked, display the output text
+	if (checkBox.checked == true){
+	  text.style.filter = "invert(1)";
+	} else {
+	  text.style.filter = "none";
+	}
+  }
+// Core Code
+
 function adjustFullScreenSize() {
 	$(".fullSizeWindow .wincontent").css("width", (window.innerWidth - 32));
 	$(".fullSizeWindow .wincontent").css("height", (window.innerHeight - 98));
+	setTimeout(adjustFullScreenSize, 10);
 }
 function makeWindowActive(thisid) {
 	$(".window").each(function() {      
