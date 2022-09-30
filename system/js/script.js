@@ -6,27 +6,25 @@ windowLeftPos = new Array,
 panel,
 id;
 
-
-
+//jQuery
 setTimeout(function(){
     $("#startup").fadeOut(400);
 	document.getElementById("startupsnd").play(); 
 }, 2000)
-
-$(function() {
-	$(".openWindow").draggable();
-  });
   
+$(function() {
+	$("#icons a").draggable();
+});
+//end of jquery
 
+//custom code
 function startTime(){
     var date = new Date();
     var h = date.getHours(); 
     var m = date.getMinutes(); 
 	var d = date.getDate();
-	var mo = date.getMonth();
+	var mo = date.getMonth() + 1;
 	var y = date.getFullYear();
-	var t = document.getElementById("time");
-	var br = '<br>';
    // var s = date.getSeconds(); 
     var session = "AM";
     
@@ -43,7 +41,6 @@ function startTime(){
     m = (m < 10) ? "0" + m : m;
     //s = (s < 10) ? "0" + s : s;
     
-	t.insertAdjacentHTML('beforeend', br);
     var time = y + "-" + mo + "-" + d + " - " + h + ":" + m + " " + session;
     document.getElementById("time").innerText = time;
     document.getElementById("time").textContent = time;
@@ -117,15 +114,13 @@ $(document).ready(function(){
   });			
 
   var changeBG = function(event) {
-    var output = document.getElementById('desktopbg');
-    output.style.backgroundImage= "url("+URL.createObjectURL(event.target.files[0])+")";
-	
+    var output = document.getElementById('desktop');
+    output.style.background= "url("+URL.createObjectURL(event.target.files[0])+")";
   };
 
   var resetBG = function(event) {
-	var output = document.getElementById('desktopbg');
-	output.style.backgroundImage= "";
-
+	var output = document.getElementById('desktop');
+	output.style.background= "";
   }
   
   function enableWatermark() {
@@ -144,14 +139,115 @@ $(document).ready(function(){
 	// Get the checkbox
 	var checkBox = document.getElementById("colorCheck");
 	// Get the output text
-	var text = document.getElementById("main");
+	var color = document.getElementById("colorop");
 	// If the checkbox is checked, display the output text
 	if (checkBox.checked == true){
-	  text.style.filter = "invert(1)";
+	  color.style.filter = "invert(1)";
 	} else {
-	  text.style.filter = "none";
+	  color.style.filter = "";
 	}
   }
+  function localBG() {
+	document.getElementById("desktop").style.background = "url('system/img/bg.png')";
+}
+
+  function defaultColors() {
+	// Get the checkbox
+	var checkBox = document.getElementById("defaultColor");
+	// Get the output text
+	var taskbar = document.getElementById("taskbar");
+	var appsmenu = document.getElementById("appsmenu");
+	var htmltemp = document.getElementById("htmltemp");
+	// If the checkbox is checked, display the output text
+	if (checkBox.checked == true){
+	  taskbar.style.background = "";
+	  appsmenu.style.background = "";
+	  htmltemp.style.color = "";
+	  
+	} else {
+	  taskbar.style.background = "";
+	  appsmenu.style.background = "";
+	  htmltemp.style.color = "";
+	}
+	const winhead = document.getElementsByClassName('windowHeader');
+    $(winhead).css('background', '');
+	$("#abranding a").css('color', '');
+	$("#watermark").css('color', '');
+	$('button').css('border-color', '');
+  }
+
+
+
+// *** TO BE CUSTOMISED ***
+
+var style_cookie_name = "ostheme" ;
+var style_cookie_duration = 30 ;
+var style_domain = "broimluna.github.io" ;
+
+// *** END OF CUSTOMISABLE SECTION ***
+// You do not need to customise anything below this line
+
+function switch_style ( css_title )
+{
+// You may use this script on your site free of charge provided
+// you do not remove this notice or the URL below. Script from
+// https://www.thesitewizard.com/javascripts/change-style-sheets.shtml
+  var i, link_tag ;
+  for (i = 0, link_tag = document.getElementsByTagName("link") ;
+    i < link_tag.length ; i++ ) {
+    if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&
+      link_tag[i].title) {
+      link_tag[i].disabled = true ;
+      if (link_tag[i].title == css_title) {
+        link_tag[i].disabled = false ;
+      }
+    }
+    set_cookie( style_cookie_name, css_title,
+      style_cookie_duration, style_domain );
+  }
+}
+function set_style_from_cookie()
+{
+  var css_title = get_cookie( style_cookie_name );
+  if (css_title.length) {
+    switch_style( css_title );
+  }
+}
+function set_cookie ( cookie_name, cookie_value,
+    lifespan_in_days, valid_domain )
+{
+    // https://www.thesitewizard.com/javascripts/cookies.shtml
+    var domain_string = valid_domain ?
+                       ("; domain=" + valid_domain) : '' ;
+    document.cookie = cookie_name +
+                       "=" + encodeURIComponent( cookie_value ) +
+                       "; max-age=" + 60 * 60 *
+                       24 * lifespan_in_days +
+                       "; path=/" + domain_string ;
+}
+function get_cookie ( cookie_name )
+{
+    // https://www.thesitewizard.com/javascripts/cookies.shtml
+	var cookie_string = document.cookie ;
+	if (cookie_string.length != 0) {
+		var cookie_array = cookie_string.split( '; ' );
+		for (i = 0 ; i < cookie_array.length ; i++) {
+			cookie_value = cookie_array[i].match ( cookie_name + '=(.*)' );
+			if (cookie_value != null) {
+				return decodeURIComponent ( cookie_value[1] ) ;
+			}
+		}
+	}
+	return '' ;
+}
+
+function startupFunctions() {
+	startTime();
+	set_style_from_cookie()
+}
+
+
+  
 // Core Code
 
 function adjustFullScreenSize() {

@@ -23,6 +23,7 @@ input,select{vertical-align:middle}
 ::-webkit-scrollbar
 {
 	width: 6px;
+    height: 6px;
 	background-color: transparent;
 }
 
@@ -39,8 +40,12 @@ input,select{vertical-align:middle}
     margin: 12px 0px;
 }
 
-#main {
+#colorop {
     transition: 0.5s;
+}
+
+a, h1, p, ul, input {
+    color: white;
 }
 
 desktop {
@@ -48,8 +53,9 @@ desktop {
     position: fixed;
     height: 100%;
     width: 100%;
-    background: url("../img/bg.png");
     background-size: cover !important;
+    background: url("https://bing.biturl.top/?resolution=3840&format=image&index=0&mkt=en-CA");
+    background-color: #3B6EA5;
 	overflow: hidden;
     top: 0;
     bottom: 0;
@@ -64,7 +70,6 @@ desktop {
     color: white;
     font-family: 'Helvetica', 'Arial', sans-serif;
     text-align: right;
-    width: 97%;
     font-size: 15px;
 }
 
@@ -75,15 +80,16 @@ desktop {
     height: 0px;
     left: 0;
     right: 0;
-    bottom: 34px;
-    z-index: 2;
+    bottom: 33px;
+    z-index: 2000;
     overflow-x: hidden;
     overflow-y: hidden;
     transition: 0.5s;
-    background-color: #00000085;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-top-right-radius: 10px;
+    background: transparent;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-top-right-radius: 16px;
 }
 
 #appsmenu.opened {
@@ -94,7 +100,7 @@ desktop {
 	background:transparent; 
     border:solid 1px transparent; 
     margin: 7px 0 7px 7px;
-    height: 80%;
+    height: 85%;
     overflow-y: scroll;
     float:left; 
     display:block; 
@@ -127,44 +133,32 @@ desktop {
 #appicons a br {
     display: none;
 }
-
-#settingsbar {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(0%, -50%);
-    transform: translate(0%, -50%);
-    /* margin: 0 auto; */
-    width: 1px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    height: 90%;
-    right: 0;
-    z-index: 2;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    transition: 0.5s;
-    background-color: #00000085;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+#themesrow {
+    overflow-x: scroll;
+    display: flex;
+    width: 99%;
+    height: 36px;
+    position: static;
 }
-
-#settingsbar:hover {
-    width: 400px; 
-}
-
-#settingsbar #abranding {
-        display: inline-flex;
+#abranding {
+        display: flow-root;
        align-items:center;
-       font-size: 1.6em;
-       font-weight: bold; 
+       font-size: 1.5em;
 }
 
-.tab {
+  .tab {
     padding: 10px;
+    height: 70%;
+    overflow-y: scroll;
+    margin: -15px 0px;
 }
 #tabsettings {
     padding: 10px 10px;
 }
+#tabsettings button {
+    margin: 0px -1px;
+}
+
 
 
 .context-menu {
@@ -172,11 +166,11 @@ desktop {
     text-align: center;
     background: transparent;
     border: 3px solid transparent;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    -webkit-box-shadow: 0px 0px 15px 0px #000000;
-    box-shadow: 0px 0px 15px 0px #000000;
-    border-radius: 10px;
+    background: transparent;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .context-menu ul {
@@ -187,7 +181,7 @@ desktop {
 }
 
 .context-menu ul li {
-    border-radius: 5px;
+    border-radius: 16px;
     background: transparent;
     padding-bottom: 7px;
     padding-top: 7px;
@@ -217,7 +211,10 @@ desktop {
 #startup {
     position: fixed;
     display: block; 
-    background:black;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     width: 100%;
     height: 100%;
     z-index: 999999;
@@ -237,26 +234,28 @@ desktop {
     font-size: 18px;
   }
   button {
-    border: 2px solid #ffffff;
+    border: 2px solid;
+    border-color: #ffffff;
     border-radius: 5px;
     font-size: 15px;
-    padding: 1px 4px;
     background: #CCC;
     font-weight: bold;
     cursor: pointer;
     height: 30px;
-    margin: -5px 0px;
+    margin: 0px 2px;
   }
-
 
 .window {
     position: absolute;
     border: 2px solid #000;
-    background: #0000007a;
-    border-radius: 5px;
+    /*background: #0000007a;
+    border-radius: 5px;*/
     z-index: 1000;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: transparent;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 .window.closed {
 	display: none;
@@ -272,6 +271,19 @@ desktop {
     bottom: 32px !important;
     border: none !important;
 }
+
+
+.fullSizeWindow {
+    display: block;
+      border: 2px solid transparent;
+      border-radius: 0px;
+      position: fixed;
+      left: 0px !important;
+      top: 0px !important;
+      height: 100% !important;
+      width: 100% !important;    
+      z-index: 9999999 !important;
+}
 .fullSizeWindow .ui-resizable-handle {
 	display: none;
 }
@@ -280,7 +292,8 @@ desktop {
     background-color: transparent;
     text-align: right;
     border-bottom: 2px solid transparent;
-    padding: 2px;
+    margin: 5px;
+    border-radius: 8px;
     cursor: move;
     height: 28px;
 }
@@ -295,7 +308,7 @@ desktop {
     font-size: 19px;
     padding: 2px 10px;
     font-family: "Arial Black", Gadget, sans-serif;
-    border-radius: 5px;
+    border-radius: 12px;
     line-height: 20px;
     width: 12px;
     height: 20px;
@@ -305,7 +318,6 @@ desktop {
 .windowHeader > span:hover {
 	background: rgba(255,255,255,0.3);
 }
-
 .windowHeader > span > span {
     display: inline-block;
     height: 8px;
@@ -340,6 +352,7 @@ desktop {
     margin: 2px;
     border-radius: 0 0 5px 5px;
 }
+
 .windowHeader > strong {
     float: left;
     margin: 0px 3px 0 10px;
@@ -359,12 +372,12 @@ desktop {
     font-weight: bold;
     cursor: pointer;
     padding: 0 1px;    
-    transform: scale(1.14);
+    transform: scale(1);
+    transition: 0.5s;
 }
 .appsPanel {
     display: inline-block;
     border: transparent;
-    border-radius: 4px;
     position: relative;
     font-size: 15px;
     padding: 0px 5px;
@@ -382,6 +395,7 @@ desktop {
 .appsPanel img:hover {
 background: rgba(0, 0, 0, 0.5);
 transition: 0.5s;
+border-radius: 4px;
 }
 .taskbarPanel:hover{
     background: rgba(0, 0, 0, 0.3);
@@ -390,6 +404,7 @@ transition: 0.5s;
 }
 .taskbarPanel.activeTab {
     background-color: #2e2e2e;
+    transform: scale(1.14);
 }
 .taskbarPanel.activeTab:hover {
     background: rgba(0, 0, 0, 0.3);
@@ -404,14 +419,15 @@ transition: 0.5s;
 #taskbar {
 	position: absolute;
 	height: 32px;
-	border-top: 2px solid transparent;
+	border-top: 1px solid transparent;
 	bottom: 0;
 	left: 0;
-    z-index: 10;
+    z-index: 2000;
 	right: 0;
-	background: #00000085;
-	backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
+	background: transparent;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 	
 }
 #icons {
@@ -446,7 +462,6 @@ transition: 0.5s;
     right: 20px;
     font-weight: bold;
     font-size: 15px;
-    color: white;
 }
 
 /*Demo styles BEGIN*/
@@ -467,9 +482,11 @@ transition: 0.5s;
 #window4 .wincontent {	width: 255px; height: 248px;	}
 #window5 .wincontent {	width: 640px; height: 480px;	}
 #window6 .wincontent {	width: 830px; height: 635px;	}
-#window7 .wincontent {	width: 376px; height: 356px;	}
+#window7 .wincontent {	width: 358px; height: 365px;	}
 
-
+#window6 > .wincontent iframe {
+    height: calc(100% - 20px);
+}
 
 
 @media screen and (max-width:960px){
@@ -490,4 +507,9 @@ transition: 0.5s;
 #window3 {    top: 9px;    left: 10px;	}
 #window2 {    left: -118px;	}
 #window1 .wincontent {    width: auto;    height: 300px;	}
+}
+
+#window7 .wincontent {
+min-width: 358px;
+min-height: 365px;
 }

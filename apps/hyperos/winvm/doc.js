@@ -274,7 +274,7 @@
       }
       else {
         element
-          .width(1024)
+          .width(1366)
           .height(768);
       }
       display.canvas.oncontextmenu = function () { return false; } // do nothing on right click
@@ -547,7 +547,7 @@
             display.resize({width:480,height:800});
           }
           else {
-            display.resize({width:1024,height:768});
+            display.resize({width:1366,height:768});
           }
 
           var lastDownTarget;

@@ -1,0 +1,187 @@
+@media screen and (max-width:1024px) {
+    #themesrow, .themestext, .themeshr {
+        display: none !important;
+    }
+  }
+  
+  /* Context menu */
+.context-menu {
+    position: absolute;
+    text-align: center;
+    background: transparent;
+    border: 3px solid transparent;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    -webkit-box-shadow: 0px 0px 0px 0px #000000;
+    box-shadow: 0px 0px 0px 0px #000000;
+    border-radius: 0px;
+}
+
+.context-menu ul {
+    
+}
+
+.context-menu ul li {
+    border-radius: 0px;
+}
+
+
+.context-menu ul li:hover {
+    background: #00000024;
+    border: 1px solid white;
+}
+/* end of context menu*/
+  .appsHtxt {
+      text-align: unset !important;
+      margin: 15px 10px;
+      font-size: 28px;
+      color: white;
+  }
+  #appsmenu {
+      position: fixed;
+     margin: unset !important;
+     height: 100%;
+      width: 0%;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      border-top-right-radius: 0px;
+  }
+  
+  #appsmenu.opened {
+      width: 100% !important;
+      height: 100% !important;
+  }
+  
+  #appicons {
+      left: 5px;
+      height: 80%;
+  }
+  #appicons a {
+      margin: 1px 0;
+      display: inline-table;
+      cursor: pointer;
+      padding: 10px 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      color: white;
+      background: #00000040;
+      border-radius: 0px;
+  }
+  #appicons a:hover {
+      
+      background: #00000024;
+      color: #FFF;
+      border-radius: 0px;
+  
+  }
+  
+  #icons {
+      display: none;
+  }
+  
+  
+
+  
+  
+  
+  
+  .window {
+      display: block;
+      border: 2px solid transparent;
+      border-radius: 0px;
+      position: fixed;
+      left: 0px !important;
+      top: 0px !important;
+      height: 100% !important;
+      width: 100% !important;
+      z-index: 99999999;
+  }
+  
+  .wincontent {
+      top: 2px !important;
+      left: 2px !important;
+      width: 99% !important;
+      height: 95% !important;
+        overflow: hidden !important;
+    }
+  
+  #taskbar {
+      z-index: 1;
+  }
+  
+  .fullSizeWindow .ui-resizable-handle {
+      display: none;
+  }
+  .windowHeader {
+      text-align: right;
+      border-bottom: 2px solid transparent;
+      padding: 2px;
+      margin: 0px !important;
+      border-radius: 5px;
+      cursor: move;
+      height: 25px;
+  }
+  
+  
+  .winmaximize {
+      display: none !important;
+  }
+  
+  .windowHeader strong {
+      font-weight: bold;
+  }
+  .windowHeader > strong {
+    transform: translate(-50%, -50%);
+    left: 50%;
+    background: none !important;
+    top: 14px;
+    padding-left: 0px !important;
+    float: unset;
+    margin: unset;
+    line-height: unset;
+    position: absolute;
+    font-size: 15px;
+}
+  
+  .windowHeader > span {
+      display: inline-block;
+      cursor: pointer;
+      border: 2px solid transparent;
+      font-size: 20px;
+      padding: 4px 8px;
+      font-family: "Arial Black", Gadget, sans-serif;
+      border-radius: 50px;
+      line-height: 10px;
+      width: 14px;
+      height: 14px;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  #window0 .wincontent {	width: 100%; height: 100%;	}
+  #window1 .wincontent {	width: 100%; height: 100%;	}
+  #window2 .wincontent {	width: 100%; height: 100%;	}
+  #window3 .wincontent {	width: 100%; height: 100%;	}
+  #window4 .wincontent {	width: 100%; height: 100%;	}
+  #window5 .wincontent {	width: 100%; height: 100%;	}
+  #window6 .wincontent {	width: 100%; height: 100%;	}
+  #window7 .wincontent {	width: 100%; height: 100%;	}
+  
+  
