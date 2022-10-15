@@ -473,6 +473,7 @@ border-radius: 4px;
 #window5 {	top: 35px;	left: 240px;}
 #window6 {	top: 35px;	left: 240px;}
 #window7 {	top: 35px;	left: 110px;}
+#window8 {	top: 35px;	left: 110px;}
 
 
 #window0 .wincontent {	width: 660px; height: 400px;	}
@@ -483,6 +484,7 @@ border-radius: 4px;
 #window5 .wincontent {	width: 640px; height: 480px;	}
 #window6 .wincontent {	width: 830px; height: 635px;	}
 #window7 .wincontent {	width: 358px; height: 365px;	}
+#window8 .wincontent {	width: 358px; height: 365px;	}
 
 #window6 > .wincontent iframe {
     height: calc(100% - 20px);
@@ -509,7 +511,7 @@ border-radius: 4px;
 #window1 .wincontent {    width: auto;    height: 300px;	}
 }
 
-#window7 .wincontent {
+#window7 .wincontent, #window8 .wincontent {
 min-width: 358px;
 min-height: 365px;
 }
