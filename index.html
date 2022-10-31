@@ -1,75 +1,143 @@
 <!DOCTYPE html>
-<html id="colorop" lang="en">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta http-equiv="cache-control" content="no-cache">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="system/js/script.js"></script>	
 	<link rel="stylesheet" type="text/css" href="system/css/style.css" />
-	<link rel="stylesheet" href="system/css/themes/metro.css" media="only screen and (max-width: 1023px)">
-	<link rel="alternate stylesheet 1" type="text/css" title="theme1" href="system/css/themes/classic.css">
+	<link rel="stylesheet" href="system/css/themes/metro.css" media="only screen and (max-width: 767px)">
+	<link rel="alternate stylesheet 1" type="text/css" title="theme1" href="system/css/themes/pos.css">
 	<link rel="alternate stylesheet 2" type="text/css" title="theme2" href="system/css/themes/metro.css">
-	<link rel="alternate stylesheet 3" type="text/css" title="theme3" href="system/css/themes/modern.css">
+	<link rel="alternate stylesheet 3" type="text/css" title="theme3" href="system/css/themes/classic.css">
 	<title>AvalancheOS</title>
 	<audio id="startupsnd" src="system/snd/startup.wav" hidden></audio>
 </head>
 
-<body onload="startupFunctions()">
+<body id="body" onload="startupFunctions()">
 
-	<desktop id="desktop">
+	<div id="desktop" class="desktop">
 		
-		<div class="window closed" data-html="true" icon="<img src='system/img/icons/paint-32x32.png' width='25' height='25'>" data-title="Paint">
+		   <div class="window closed" data-html="true" icon="<img src='system/img/icons/paint-32x32.png' width='32' height='32'>" data-title="Paint">
 			<iframe width="100%" height="100%" src="apps/jspaint/index.html"></iframe>
 			</div>
 	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/notepad-32x32.png' width='25' height='25'>" data-title="Notepad">
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/notepad-32x32.png' width='32' height='32'>" data-title="Notepad">
 			<iframe width="100%" height="100%" src="apps/notepad/index.html"></iframe>
 			</div>
 	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/minesweeper-32x32.png' width='25' height='25'>" data-title="Minesweeper">
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/minesweeper-32x32.png' width='32' height='32'>" data-title="Minesweeper">
 				<iframe width="100%" height="100%" src="apps/minesweeper/index.html"></iframe>
 			</div>
 										
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/cal-32x32.png' width='25' height='25'>" data-title="Calendar">
-				<iframe width="100%" height="100%" src="apps/calendar/index.html"></iframe>
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/cal-32x32.png' width='32' height='32'>" data-title="Calendar">
+				<div id="calendar"></div>
+				<script src="system/js/apps/moment.min.js"></script>
+				<script src="system/js/apps/calendar.js"></script>
+				<link href="system/css/apps/calendar.css" rel="stylesheet" type="text/css">
+				</div>
+	
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/calc-32x32.png' width='32' height='32'>" data-title="Calculator">
+				<table class="calctable" border="1">
+					<tr>
+					   <td colspan="3"><input class="calctext" type="text" id="result"/></td>
+					   <!-- clr() function will call clr to clear all value -->
+					   <td><input class="calcbutton" type="button" value="c" onclick="clr()"/> </td>
+					</tr>
+					<tr>
+					   <!-- create button and assign value to each button -->
+					   <!-- dis("1") will call function dis to display value -->
+					   <td><input class="calcbutton" type="button" value="1" onclick="dis('1')"/> </td>
+					   <td><input class="calcbutton" type="button" value="2" onclick="dis('2')"/> </td>
+					   <td><input class="calcbutton" type="button" value="3" onclick="dis('3')"/> </td>
+					   <td><input class="calcbutton" type="button" value="/" onclick="dis('/')"/> </td>
+					</tr>
+					<tr>
+					   <td><input class="calcbutton" type="button" value="4" onclick="dis('4')"/> </td>
+					   <td><input class="calcbutton" type="button" value="5" onclick="dis('5')"/> </td>
+					   <td><input class="calcbutton" type="button" value="6" onclick="dis('6')"/> </td>
+					   <td><input class="calcbutton" type="button" value="-" onclick="dis('-')"/> </td>
+					</tr>
+					<tr>
+					   <td><input class="calcbutton" type="button" value="7" onclick="dis('7')"/> </td>
+					   <td><input class="calcbutton" type="button" value="8" onclick="dis('8')"/> </td>
+					   <td><input class="calcbutton" type="button" value="9" onclick="dis('9')"/> </td>
+					   <td><input class="calcbutton" type="button" value="+" onclick="dis('+')"/> </td>
+					</tr>
+					<tr>
+					   <td><input class="calcbutton" type="button" value="." onclick="dis('.')"/> </td>
+					   <td><input class="calcbutton" type="button" value="0" onclick="dis('0')"/> </td>
+					   <!-- solve function call function solve to evaluate value -->
+					   <td><input class="calcbutton" type="button" value="=" onclick="solve()"/> </td>
+					   <td><input class="calcbutton" type="button" value="*" onclick="dis('*')"/> </td>
+					</tr>
+				 </table>			
 			</div>
 	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/calc-32x32.png' width='25' height='25'>" data-title="Calculator">
-				<iframe width="100%" height="100%" src="apps/calc/index.html"></iframe>
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/bronze-32x32.png' width='32' height='32'>" data-title="Bronze Browser">
+				<link rel="stylesheet" href="system/css/apps/bronze.css">
+				<div id="bronzeIcons">
+					<a target="bronzeFrame" id="bronzeHome" href="system/appsassets/bronze/embed.html"><img src="system/img/apps/bronze/home.png"></a>
+					<a id="bronzeBack" href="javascript:history.back();"><img src="system/img/apps/bronze/back.png"></a>
+					</div>
+			<div id="bronzeTabs">
+				<button id="button" onclick="openTabb('Tab 1')">Tab 1</button>
+				<button id="button" onclick="openTabb('Tab 2')">Tab 2</button>
+				<button id="button" onclick="openTabb('Tab 3')">Tab 3</button>
+				<button id="button" onclick="openTabb('Tab 4')">Tab 4</button>
+				<button id="button" onclick="openTabb('Tab 5')">Tab 5</button>
+				<button id="button" onclick="openTabb('Tab 6')">Tab 6</button>
+			</div>
+				<div id="Tab 1" class="tabb">
+					<embed src="system/appsassets/bronze/embed.html" frameborder="0" id="Bronze" style="border: none;" class="bronzeFrame" name="bronzeFrame" scrolling="yes" marginheight="0px" marginwidth="0px" width="100%" height="100%" allowfullscreen="">
+				</div>
+				<div id="Tab 2" class="tabb" style="display:none;text-align: center;">
+					<embed src="system/appsassets/bronze/embed.html" frameborder="0" id="Bronze" style="border: none;" class="bronzeFrame" name="bronzeFrame" scrolling="yes" marginheight="0px" marginwidth="0px" width="100%" height="100%" allowfullscreen="">
+				</div>
+				<div id="Tab 3" class="tabb" style="display:none;text-align: center;">
+					<embed src="system/appsassets/bronze/embed.html" frameborder="0" id="Bronze" style="border: none;" class="bronzeFrame" name="bronzeFrame" scrolling="yes" marginheight="0px" marginwidth="0px" width="100%" height="100%" allowfullscreen="">
+				</div>
+				<div id="Tab 4" class="tabb" style="display:none;text-align: center;">
+					<embed src="system/appsassets/bronze/embed.html" frameborder="0" id="Bronze" style="border: none;" class="bronzeFrame" name="bronzeFrame" scrolling="yes" marginheight="0px" marginwidth="0px" width="100%" height="100%" allowfullscreen="">
+				</div>
+				<div id="Tab 5" class="tabb" style="display:none;text-align: center;">
+					<embed src="system/appsassets/bronze/embed.html" frameborder="0" id="Bronze" style="border: none;" class="bronzeFrame" name="bronzeFrame" scrolling="yes" marginheight="0px" marginwidth="0px" width="100%" height="100%" allowfullscreen="">
+				</div>
+				<div id="Tab 6" class="tabb" style="display:none;text-align: center;">
+					<embed src="system/appsassets/bronze/embed.html" frameborder="0" id="Bronze" style="border: none;" class="bronzeFrame" name="bronzeFrame" scrolling="yes" marginheight="0px" marginwidth="0px" width="100%" height="100%" allowfullscreen="">
+				</div>			
 			</div>
 	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/bronze-32x32.png' width='25' height='25'>" data-title="Bronze Browser">
-				<iframe width="100%" height="100%" src="apps/bronze/index.html"></iframe>
-			</div>
-	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/hyperos-32x32.png' width='25' height='25'>" data-title="HyperOS">
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/hyperos-32x32.png' width='32' height='32'>" data-title="HyperOS">
 				<a target="hos" href="apps/hyperos/index.html">Home</a>
 				<iframe name="hos" width="100%" height="100%" src="apps/hyperos/index.html"></iframe>
 			</div>
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/settings-32x32.png' width='25' height='25'>" data-title="Control Panel">
+			<div class="window closed" data-html="true" icon="<img src='system/img/icons/settings-32x32.png' width='32' height='32'>" data-title="Control Panel">
 				<div id="tabsettings">
 					<button id="settingsbutton" onclick="openTab('Customization')">Customization</button>
 					<button id="settingsbutton" onclick="openTab('About')">About</button>
+					<button id="settingsbutton" class="flagsbtn" onclick="openTab('Flags')">Flags</button>
 				</div>
 					<hr id="settingshr">
 		
 			<div id="Customization" class="tab">
-				<h1 id="settingsh1" class="themestext">Themes</h1>
-				<div id="themesrow">
+				<h1 id="settingsh1" class="themes">Themes</h1>
+				<div id="themesrow" class="themes">
 					<button id="settingsbutton" onclick="switch_style('default');return false;" name="Default Theme" value="Default Theme">Default</button>
-					<button id="settingsbutton" onclick="switch_style('theme1');return false;" name="Theme 1" value="Theme 1">Classic</button>
+					<button id="settingsbutton" onclick="switch_style('theme3');return false;" name="Theme 3" value="Theme 3">Classic</button>
 					<button id="settingsbutton" onclick="switch_style('theme2');return false;" name="Theme 2" value="Theme 2">Metro</button>
-					<button id="settingsbutton" onclick="switch_style('theme3');return false;" name="Theme 3" value="Theme 3">Modern</button>
+					<button id="settingsbutton" onclick="switch_style('theme1');return false;" name="Theme 1" value="Theme 1">prismOS</button>
 				</div>
-					<hr id="settingshr" class="themeshr">
+					<hr id="settingshr" class="themes">
 					<h1 id="settingsh1">Background</h1>
-					<input id="inputbtn" type="file" accept="image/*" onchange="changeBG(event)" style="margin: 2px 0px;">
+					<input id="inputbtn" class="wppicker" type="file" accept="image/*" onchange="changeBG(event)">
 					<br>
 					<br>
-					<button onclick="localBG()">Enable local wallpaper</button>
+					<button onclick="localBG()">Enable Bing Wallpaper</button>
                     <br>
 					<br>
 					<button onclick="resetBG(event)">Reset to default</button>
@@ -77,31 +145,44 @@
 					<br>
 					<hr id="settingshr">
 					<h1 id="settingsh1">Colors</h1>
-					<input type="color" id="colorpicker"><a>Choose your color</a></input>
+					<div id="sliders" style="display: block;margin-top: 15px;margin-left: 4px;">
+					<div id="colouredSlider" class="slider"></div><span id="colorslTxt" style="position: absolute; visibility: hidden;">Colors</span>
+					<div id="bwSlider" class="slider"></div><span id="briteslTxt" style="position: absolute; visibility: hidden; display: none;">Brightness</span>
+				    </div>
 					<br>
-					<br>
+					<input type="checkbox" id="dmToggle" class="checkBox"><a id="dmToggle">Enable Dark Mode</a></input>
+					<br id="dmToggle">
+					<br id="dmToggle">
 					<button id="defaultColor" onclick="defaultColors()">Set colors to default</button>
-					<hr id="settingshr">
-					<h1 id="settingsh1">Other</h1>
-					<input type="checkbox" id="waterCheck" onclick="enableWatermark()"><a>Enable the watermark</a></input>
 					<br>
-					<input type="checkbox" id="colorCheck" onclick="invertColors()"><a>Enable inverted colors</a></input>
-				</div>
-
+					<br>
+					<hr id="settingshr">
+					<h1 id="settingsh1" class="tskbrtab">Others</h1>
+					<input type="checkbox" onclick="centeredApps()" id="centrdAppsChk" class="checkBox"><a class="centrdAppsTxt">Set Apps button to center</a></input>
+					<br>
+				    </div>
+					<div id="Flags" class="tab" style="display:none;text-align: center;overflow: hidden;">
+						<h1 id="settingsh1">Developer Options</h1>								
+						<hr id="settingshr">
+						<form name="searchpage" onSubmit="return enableFlag()">
+						<input type="text" size='20' name="keyword" class="textinput"><br><p style="font-size: 11px;">Theses flags are experimental<br>and may not be stable.</p> 
+						<button value="Apply">Apply</button>
+						<br>
+						<select style="display: none !important" name="and_or" size='0'></select><br>
+						</form>
+						<a id="button" class="rstflgs" href="index.html">Reset flags</a>
+					</div>
 				<div id="About" class="tab" style="display:none;text-align: center;overflow: hidden;">
 		
 					<div id="abranding">
-					<img src="system/img/sys_logo.png" height="55" width="105"></img>
+					<img src="system/img/sys_logo.png" height="56" width="108"></img>
 					<br>
 					<a>AvalancheOS</a>
 					</div>
 		
 					<hr id="settingshr">
-					<br>
-					<a>Version 3 (Build: 2600.102)</a>
-					<br>
-					<br>
-		
+					<a>November 2022 Release (Build: 8000.100)</a>
+					<br>		
 					<hr id="settingshr">
 					<a>broimluna - 2022</a>
 					<br>
@@ -113,41 +194,12 @@
 				  </div>
 			</div>
 
-			<div class="window" data-html="true" icon="<img src='system/img/icons/about-32x32.png' width='25' height='25'>" data-title="AvalancheOS X">
-              <div style="height: 99%;overflow-y: scroll;text-align: center;">
-				<div id="abranding">
-					<img src="system/img/sys_logo.png" height="55" width="105"></img>
-					<br>
-					<a>AvalancheOS X</a>
-					</div>
-		
-					<hr id="settingshr">
-					<a>
-					AvalancheOS X is a new version of AvalancheOS that will constantly be updated and will be different from the regular AvalancheOS.</a>
-					<br>
-					<br>
-					<a>AvalancheOS X includes a new, simpler and modern UI that is very modular.</a>
-					<br>
-					<br>
-					<a>AvalancheOS X's apps are a lot more faster and will be a lot more customizable
-					as Apps that are marked as "Container" are now native and do not rely on an iframe which made the OS a lot more slower.</a>
-					<br>
-					<br>
-				     <a>AvalancheOS X is not a successor to AvalancheOS for the moment and a preview will be available <a href="/codenamex">here</a>.</a>
-					<br>
-					<hr id="settingshr">
-					<a>AvalancheOS - broimluna - 2022</a>
-					<br>
-					<br>			 
-				</div>
-			</div>
-
-			
 			
 		
 		<div id="taskbar">
-			<a class="appsPanel" onclick="appstoggle()"><img src='system/img/sys_logo.png' width='44' height='28'></a>
+			<a id="appsPanel" onclick="appstoggle()"><img src='system/img/sys_logo.png' width='62' height='36'></a>
 			<a id="time"></a>
+			<a id="date"></a>
 		</div>
 		
 		<div id="icons">
@@ -191,6 +243,7 @@
 			</ul>
 			</div>
 
+
 			  
 
 			<div id="startup">
@@ -202,23 +255,55 @@
 				</div>
 			</div>
 
-	</div>
-	
-	<a id="watermark">AvalancheOS 3<br>Build 2600</a>
-
+	</desktop>
+	<a id="watermark">
+	This build is a preview build and may not be stable.
+	</a>
 </body>
 <script>
-	$('#colorpicker').on('change', function() {
-    var cpcolor = this.value;
-	const winhead = document.getElementsByClassName('windowHeader');
-    $(winhead).css('background', cpcolor);
-	$('#taskbar').css('background', cpcolor);
-	$('#appsmenu').css('background', cpcolor);
-	$('#htmltemp').css('color', cpcolor);
-	$('#watermark').css('color', cpcolor);
-	$('#abranding a').css('color', cpcolor);
-	$('button').css('border-color', cpcolor);
+let darkToggle = document.querySelector('#dmToggle');
+darkToggle.addEventListener('change', ()=> {
+
+	document.getElementById("time").classList.toggle("dark");
+	document.getElementById("date").classList.toggle("dark");
+	document.getElementById("taskbar").classList.toggle("dark");
+	document.getElementById("appsmenu").classList.toggle("dark");
+	document.getElementById("appicons").classList.toggle("dark");
+	document.getElementById("appsHtxt").classList.toggle("dark");
+	document.getElementById("icons").classList.toggle("dark");
 
 });
+
+//color slider
+var hsl1 = 0;
+var hsl2 = 50;
+
+var colourslider = $("#colouredSlider");
+colourslider.slider({
+  max: 360,
+  slide: setColour,
+  change: setColour
+});
+
+var bwslider = $("#bwSlider");
+bwslider.slider({
+  max: 100,
+  value: 50,
+  slide: setColour,
+  change: setColour
+});
+
+function setColour() {
+  hsl1 = colourslider.slider("option", "value");
+  hsl2 = bwslider.slider("option", "value");
+
+  $('.windowHeader, #appsmenu, #taskbar').css('background', "hsl(" + hsl1 + ", 100%, " + hsl2 + "%)");
+  $('#htmltemp, #watermark, #abranding a, .checkBox').css('color', "hsl(" + hsl1 + ", 100%, " + hsl2 + "%)");
+  $('#button, button, .calcbutton, .calctext, .textinput, .rstflgs').css('border-color', "hsl(" + hsl1 + ", 100%, " + hsl2 + "%)");
+  $("#colouredSlider .ui-state-default").css("background-color", "hsl(" + hsl1 + ", 100%, 50%)");
+  $("#bwSlider .ui-state-default").css("background-color", "rgb(" + hsl2 * 2.5 + "," + hsl2 * 2.5 + "," + hsl2 * 2.5 + ")");
+}
+//end of it
 </script>
 </html>
+
