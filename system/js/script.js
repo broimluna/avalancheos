@@ -81,15 +81,11 @@ id;
 		  if (paRameter == 'DisableTheming') {
 			$("<style type='text/css'> .themes {  display:none !important; }</style>").appendTo("div");
 			} 
-
+			
 		  if (startup == 'no') {
 			$('#startup').css('display','none');
 		} 
-		
-		if (flags == 'yes') {
-			$('.flagsbtn').css('display','inline-block');
-		} 
-
+	
 		
 		
 		// No code inserted, does nothing.
@@ -166,6 +162,17 @@ function startDate(){
     document.getElementById("date").textContent = date;
     setTimeout(startDate, 1000);
 }
+function cs_change_music(music)
+{
+document.getElementById("my-audio").pause();
+document.getElementById("my-audio").setAttribute('src', music);
+document.getElementById("my-audio").load();
+    $(".audioplayer").addClass("audioplayer-playing");
+    document.getElementById("my-audio").play();
+}
+
+
+
 function appstoggle() {
 	document.getElementById("appsmenu").classList.toggle("opened");
 }
@@ -316,7 +323,7 @@ $(document).ready(function(){
 //THEMES COOKIES
 // *** TO BE CUSTOMISED ***
 
-var style_cookie_name = "xostheme" ;
+var style_cookie_name = "ostheme" ;
 var style_cookie_duration = 30 ;
 var style_domain = "broimluna.github.io" ;
 

@@ -139,7 +139,7 @@
     padding-left: 0px !important;
     float: unset;
     margin: unset;
-    line-height: unset;
+    line-height: 32px;
     position: absolute;
     font-size: 15px;
 }

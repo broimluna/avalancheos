@@ -5,11 +5,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="system/js/script.js"></script>	
+	<script src="system/js/audioplayer.js"></script>
 	<link rel="stylesheet" type="text/css" href="system/css/style.css" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="system/css/themes/metro.css" media="only screen and (max-width: 767px)">
 	<link rel="alternate stylesheet 1" type="text/css" title="theme1" href="system/css/themes/pos.css">
 	<link rel="alternate stylesheet 2" type="text/css" title="theme2" href="system/css/themes/metro.css">
@@ -181,7 +182,7 @@
 					</div>
 		
 					<hr id="settingshr">
-					<a>November 2022 Release (Build: 8000.100)</a>
+					<a>December 2022 Release (Build: 9400)</a>
 					<br>		
 					<hr id="settingshr">
 					<a>broimluna - 2022</a>
@@ -193,6 +194,49 @@
 					<a class="btmbtninvert" target="_blank" href="https://github.com/broimluna"><img src="system/img/icons/github.png" height="32" width="32" title="Follow my GitHub!"></a>
 				  </div>
 			</div>
+
+
+	<div class="window closed" data-html="true" icon="<img src='system/img/icons/media-player.png' width='32' height='32'>" data-title="Media Player">
+				<div class="wplist"><ul style="list-style: none">
+	            <li style="margin-left: 20px !important; margin-top: 10px !important; line-height: 135%;">
+		        <ul id="list">
+	   
+	
+	        <div id="pages">
+			<div id="mpBACK" class="mydivshow">
+			<h1>Select a Category:</h1>
+			 <button id="mpNETR" class="catsel">Internet Radio</button>
+			 <br>
+			 <br>
+			 <button id="mpCURL" class="catsel">Custom URL</button>
+			</div>        
+
+			<div id="mpNETR" class="mydivhide" style="display:none;">
+			<h1>Internet Radio:</h1>
+	        <li><a id="button" onclick="cs_change_music('https://s2.radio.co/s2b2b68744/listen');">BadRadio</a></li>
+			<br> 
+	        <li><a id="button" onclick="cs_change_music('https://streamer.radio.co/sd7b28e5f3/listen');">Mambo Radio</a></li>
+			<br> 
+	        <li><a id="button" onclick="cs_change_music('https://radio.plaza.one/ogg');">Nightwave Plaza</a></li>
+	        <br><a id="mpBACK" class="catsel">Back</a><br><br>
+	        <strong>&copy; 2022 BadRadio, Mambo Radio, Nightwave Plaza, This music is streamed live.</strong>
+	         <br><br>
+			</div>
+			<div id="mpCURL" class="mydivhide" style="display:none;">
+			<h1>Custom URL:</h1>
+		    <input name="musicURL" type="text" maxlength="512" id="musicURL" class="textinput"/><button class="search" onclick="cs_change_music(musicURL.value);">Play!</button>
+		    <br><a id="mpBACK" class="catsel">Back</a><br><br>
+		    <br><br>
+		    </div>
+
+		</div>   
+	
+	</ul>
+	  </li>
+	</ul></div>
+	<audio style="width:100%;height:28px;bottom:0;position:absolute;" id="my-audio" controls loop></audio>
+</div>
+
 			
 		
 		<div id="taskbar">
@@ -222,13 +266,14 @@
 						<a class="openWindow" data-id="4"><img border="0" alt="" src="system/img/icons/calc-32x32.png" width="32" height="32"><br>Calculator</a>
 						<a class="openWindow" data-id="5"><img border="0" alt="" src="system/img/icons/bronze-32x32.png" width="32" height="32"><br>Bronze Browser</a>
 						<a class="openWindow" data-id="6"><img border="0" alt="" src="system/img/icons/hyperos-32x32.png" width="32" height="32"><br>HyperOS</a>
+						<a class="openWindow" data-id="8"><img border="0" alt="" src="system/img/icons/media-player.png" width="32" height="32"><br>Media Player</a>
 						<a class="openWindow" data-id="7"><img border="0" alt="" src="system/img/icons/settings-32x32.png" width="32" height="32"><br>Control Panel</a>
-
-
-						
-					</center>
+					</center>		
 				</div>
-			
+				<div id="userProfile">
+				<hr>
+				<a><img border="0" alt="" src="system/img/pfp.png" width="32" height="32"><br>User</a></div>
+				<a id="settingsUP" class="openWindow" data-id="7"><img border="0" alt="" src="system/img/icons/settings-32x32.png" width="32" height="32"><br></a>	
 		</div>
 
 		<div id="contextMenu" class="context-menu" style="display: none; left: 140px; top: 421px;">
@@ -270,6 +315,11 @@ darkToggle.addEventListener('change', ()=> {
 	document.getElementById("appicons").classList.toggle("dark");
 	document.getElementById("appsHtxt").classList.toggle("dark");
 	document.getElementById("icons").classList.toggle("dark");
+	document.getElementById("settingsUP").classList.toggle("dark");
+	document.getElementById("userProfile").classList.toggle("dark");
+	$("#userProfile hr").toggleClass("dark");
+
+
 
 });
 
@@ -303,5 +353,12 @@ function setColour() {
   $("#bwSlider .ui-state-default").css("background-color", "rgb(" + hsl2 * 2.5 + "," + hsl2 * 2.5 + "," + hsl2 * 2.5 + ")");
 }
 //end of it
+
+$(".catsel").click(function() {
+		var id = $(this).attr("id");
+		$("#pages div").css("display", "none");
+		$("#pages div#" + id + "").css("display", "block");
+	});
 </script>
 </html>
+
