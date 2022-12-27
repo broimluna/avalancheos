@@ -56,7 +56,6 @@ id;
 	
 	var paRameter = getParameterByName('flag');
 	var startup = getStartValByName('startup');
-	var flags = getStartValByName('flags');
 
  
  // Enables flag when page loads
@@ -64,18 +63,14 @@ id;
 	
 // CSSDev: enables css dev theme
 		if (paRameter == 'ThisIsTheSecretDevMode!') {
-		   $("<style type='text/css'> #watermark { display: inline-block !important; } #startup {  display:none !important; } #desktop { } </style>").appendTo("#desktop");
+		   $("<style type='text/css'> @import url(system/css/themes/dev.css);</style>").appendTo("#desktop");
 		} 
+		if (paRameter == 'EnableVecteriaMode') {
+			$("<style type='text/css'> @import url(system/css/themes/vecteria.css);</style>").appendTo("#desktop");
+		 } 
 
 		if (paRameter == 'NoStartup') {
 			$("<style type='text/css'> #startup {  display:none !important; }</style>").appendTo("#desktop");
-		  }
-
-		  if (paRameter == 'DockedTB') {
-			$("<style type='text/css'> #taskbar {  width:40% !important; } #appsPanel {  left:0 !important; position:unset !important; } #appsmenu {  margin: 0 auto !important; }</style>").appendTo("#desktop");
-		  }
-		  if (paRameter == 'EnableDisabledThemesFeatures') {
-			$("<style type='text/css'> #centrdAppsChk, .centrdAppsTxt, #showContainedChk, .showContainedTxt, .tskbrtab, #dmToggle { display: revert !important; }</style>").appendTo("#desktop");
 		  }
 
 		  if (paRameter == 'DisableTheming') {
@@ -172,6 +167,15 @@ document.getElementById("my-audio").load();
 }
 
 
+$(document).ready(function(){
+	$("#appsmenu").click(function(){
+		document.getElementById("appsmenu").classList.toggle("opened");
+	  }, function(){
+		document.getElementById("appsmenu").classList.remove("opened");
+  
+	});
+  });			
+  
 
 function appstoggle() {
 	document.getElementById("appsmenu").classList.toggle("opened");
@@ -235,16 +239,6 @@ function openTabb(tabName) {
 	document.getElementById(tabName).style.display = "block";
 	}
 
-$(document).ready(function(){
-	$("#appsmenu").click(function(){
-		document.getElementById("appsmenu").classList.toggle("opened");
-	  }, function(){
-		document.getElementById("appsmenu").classList.remove("opened");
-  
-	});
-  });			
-  
-
   var changeBG = function(event) {
     var output = document.getElementsByClassName('desktop')[0];
     output.style.background= "url("+URL.createObjectURL(event.target.files[0])+")";
@@ -262,8 +256,10 @@ $(document).ready(function(){
   function defaultColors() {
 	// Get the checkbox
 	var checkBox = document.getElementById("defaultColor");
+	let root = document.documentElement;
 	// If the checkbox is checked, display the output text
 	if (checkBox.checked == true){
+		root.style.setProperty('--wppickercolor', "");
 		$('#taskbar').css('background', '');
 		$('#appsmenu').css('background', '');
 		$('#htmltemp').css('color', '');
@@ -280,6 +276,7 @@ $(document).ready(function(){
 	  
 	} else {
 		$('#taskbar').css('background', '');
+		root.style.setProperty('--wppickercolor', "");
 		$('#appsmenu').css('background', '');
 		$('#htmltemp').css('color', '');
 		$('#watermark').css('color', '');
@@ -291,6 +288,8 @@ $(document).ready(function(){
 		$('.calctext').css('border-color', '');
 		$('.textinput').css('border-color', '');
 		$('.rstflgs').css('border-color', '');
+		$('#notebutton').css('border-color', '');
+		$('#document-textarea').css('border-color', '');
 	}
 	const winhead = document.getElementsByClassName('windowHeader');
     $(winhead).css('background', '');
@@ -394,7 +393,8 @@ function startupFunctions() {
 }
 
 
-  
+//End of custom code
+
 // Core Code
 
 function adjustFullScreenSize() {
@@ -472,11 +472,11 @@ $(document).ready(function(){
 		minimizedHeight[i] = $(this).height();
 		windowTopPos[i] = $(this).css("top");
 		windowLeftPos[i] = $(this).css("left");
-		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + $(this).attr("icon") + '</div>');
+		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + $(this).attr("taskicon") + '</div>');
 		if ($(this).hasClass("closed")) {	$("#minimPanel" + i).addClass('closed');	}		
 		$(this).attr('id', 'window' + (i++));
 		$(this).wrapInner('<div class="wincontent"></div>');
-		$(this).prepend('<div class="windowHeader"><strong>' + $(this).attr("data-title") + '</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div>');
+		$(this).prepend('<div class="windowHeader"><strong>' + $(this).attr("headicon") + $(this).attr("data-title") + '</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">x</span></div>');
 	});
 	
 	$("#minimPanel" + (i-1)).addClass('activeTab');
@@ -511,9 +511,11 @@ $(document).ready(function(){
 		}
     });	
 	
-    $(".openWindow").click(function(){		// open closed window
+    $(".openWindowDblClick").dblclick(function(){		// open closed window
 		openWindow($(this).attr("data-id"));
-		
+    });
+	$(".openWindow").click(function(){		// open closed window
+		openWindow($(this).attr("data-id"));
     });
 	
     $(".winmaximize").click(function(){
@@ -533,3 +535,4 @@ $(document).ready(function(){
     });		
 	adjustFullScreenSize();	
 });
+//End of Core Code

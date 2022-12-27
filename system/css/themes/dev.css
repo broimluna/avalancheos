@@ -12,3 +12,7 @@
 #watermark {
 display: inline-block;
 }
+
+.curtheme::before {
+    content: 'Dev';
+   }

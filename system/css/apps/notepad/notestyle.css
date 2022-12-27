@@ -1,0 +1,253 @@
+
+
+.window-close-button,
+.window-maximize-button,
+.window-minimize-button {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAKCAYAAADo3z3CAAAAoUlEQVRIS9VVWw7AIAib9z/0FpZgCOFRgpluf9MClhYdV++7gfDhYLxYDw+UyiHd5F8S5lr6zNa6Xpv/KwhHOahQpLB1+CwfycgYrwmE0WK8MTsIR1aOGsR+NYkkYzN5/pGwVA9xA/diq8LeHCKuQxQ+aoYt2yJWtpSNZth0edRpGVC5eGQcSg4hXLml3fdpBeHs8evWyPKX9ruXVqnYCeAHA8IyC9K2kmkAAAAASUVORK5CYII=");
+	-ms-interpolation-mode: nearest-neighbor;
+	display: block;
+	width: 16px;
+	height: 14px;
+	padding: 0;
+}
+
+ .window-close-button {
+	background-position: calc(-3 * 13px - 1px) 0px;
+} 
+.window-maximize-button {
+	background-position: calc(-1 * 13px - 1px) 0px;
+}*
+.maximized .window-maximize-button {
+	background-position: calc(-2 * 13px - 1px) 0px;
+}
+.window-minimize-button {
+	background-position: calc(-0 * 13px - 1px) 0px;
+}
+
+.window-close-button:hover:active {
+	background-position: calc(-3 * 13px - 0px) 1px;
+}
+.window-maximize-button:hover:active {
+	background-position: calc(-1 * 13px - 0px) 1px;
+}
+.maximized .window-maximize-button:hover:active {
+	background-position: calc(-2 * 13px - 0px) 1px;
+}
+.window-minimize-button:hover:active {
+	background-position: calc(-0 * 13px - 0px) 1px; 
+}
+
+
+
+.menus {
+	color: white;
+	color: white;
+}
+.os-window:not(.focused) .menus {
+	color: rgb(128, 128, 128);
+	color: var(--GrayText);
+}
+.menus *, .menu-popup * {
+	font-size: 12px;
+        border-radius: 15px;
+}
+.menu-container {
+	margin-bottom: 1px;
+}
+.menu-button {
+	padding: 5px 10px;
+	position: relative;
+	outline: 0;
+	/* @extend button.lightweight; */
+        border-radius: 50px;
+}
+.menu-button:hover {
+	box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;
+}
+.menu-button:active,
+.menu-button.active {
+	box-shadow: 1px 1px 0 rgb(128, 128, 128) inset, -1px -1px 0 rgb(255, 255, 255) inset;
+	box-shadow: 1px 1px 0 var(--ButtonShadow) inset, -1px -1px 0 var(--ButtonHilight) inset;
+	top: 1px;
+	left: 1px;
+}
+.menu-popup {
+	display: block;
+	padding: 2px;
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	border-top: 1px solid rgb(192, 192, 192);
+	border-top: 1px solid var(--ButtonFace);
+	border-left: 1px solid rgb(192, 192, 192);
+	border-left: 1px solid var(--ButtonFace);
+	border-right: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid var(--ButtonDkShadow);
+	box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;
+	background: rgb(192, 192, 192);
+	background: var(--Menu);
+	color: rgb(0, 0, 0);
+	color: var(--MenuText);
+}
+.menu-item {
+	padding: 1px 3px;
+	margin: 2px;
+}
+.menu-item[disabled] {
+	color: rgb(128, 128, 128);
+	color: var(--GrayText);
+	text-shadow: 0.8px 0.8px 0px rgb(255, 255, 255);
+	text-shadow: 0.8px 0.8px 0px var(--ButtonHilight);
+}
+.menu-item:focus,
+.menu-item.active {
+	text-shadow: none;
+	outline: 0;
+}
+.menu-item .menu-item-shortcut {
+	padding-left: 10px;
+}
+.menu-hr {
+	border: 0;
+	border-top: 1px solid rgb(128, 128, 128);
+	border-top: 1px solid var(--ButtonShadow);
+	border-bottom: 1px solid rgb(255, 255, 255);
+	border-bottom: 1px solid var(--ButtonHilight);
+	margin: 0px 2px;
+}
+.menu-hotkey {
+	text-decoration: underline;
+}
+
+
+
+
+
+.scrollbar {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2P8/////4MHDzIwHjhw4L+9vT0DAHAFCj6esq3FAAAAAElFTkSuQmCC") repeat;
+	background: var(--checker) repeat;
+	-ms-interpolation-mode: nearest-neighbor;
+	    image-rendering: -moz-crisp-edges;
+	    image-rendering: pixelated;
+}
+.scrollbar-thumb {
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	border-top: 1px solid rgb(192, 192, 192);
+	border-top: 1px solid var(--ButtonFace);
+	border-left: 1px solid rgb(192, 192, 192);
+	border-left: 1px solid var(--ButtonFace);
+	border-right: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid var(--ButtonDkShadow);
+	box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;
+}
+.scrollbar-track-piece:hover:active {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2P8/////4MHDzIwHjhw4L+9vT0DAHAFCj6esq3FAAAAAElFTkSuQmCC") repeat;
+	background: var(--checker) repeat;
+	-ms-interpolation-mode: nearest-neighbor;
+	    image-rendering: -moz-crisp-edges;
+	    image-rendering: pixelated;
+	background-color: white;
+	background-blend-mode: difference;
+	/* background-attachment: fixed; breaks the checkered background in chrome */
+}
+.scrollbar-track-piece.increment {
+	background-position: bottom;
+}
+.scrollbar-corner {
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+}
+
+.scrollbar-button {
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	border-top: 1px solid rgb(192, 192, 192);
+	border-top: 1px solid var(--ButtonFace);
+	border-left: 1px solid rgb(192, 192, 192);
+	border-left: 1px solid var(--ButtonFace);
+	border-right: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid var(--ButtonDkShadow);
+	box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAW0lEQVQ4T2NkGGSAcZC5h4FWDvrPwEC02ShqkR0EkkAHuBxMyEKYWYQ8jKEOXQOyo/A5BuZwqqvBZiA+3xMbilQLIWqlcUJRimwPzjRELcdQZA6hREeR4eRoBgBoXhAK6oiMhwAAAABJRU5ErkJggg==");
+	background-image: var(--scrollbar-arrows-ButtonText);
+	-ms-interpolation-mode: nearest-neighbor;
+	    image-rendering: -moz-crisp-edges;
+	    image-rendering: pixelated;
+	width: 13px;
+	width: var(--scrollbar-size);
+	height: 13px;
+	height: var(--scrollbar-size);
+	box-sizing: border-box;
+}
+.scrollbar-button:not(.disabled):hover:active {
+	border: 1px solid rgb(128, 128, 128);
+	border: 1px solid var(--ButtonShadow);
+	box-shadow: none;
+}
+.scrollbar-button.disabled {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDmpoaPjf0NBAlNnoauGaQBLooYXLUEIWwswi5Chs6lB8gewofI6BOZwWajCCFZ/viQ1FqoUQtRI4oShFtgdnGqKWYyg1h6icQKklpOgHAM9mQArEvm5+AAAAAElFTkSuQmCC"), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDvr///9/RkZGosxGVwvXBJJADy1chhKyEGYWIUdhU4fiC2RH4XMMzOG0UIMRrPh8T2woUi2EqJXACUUpsj040xC1HEOpOUTlBEotIUU/AKXFQAqyTJ6DAAAAAElFTkSuQmCC");
+	background-image: var(--scrollbar-arrows-GrayText), var(--scrollbar-arrows-ButtonHilight);
+}
+
+.scrollbar-button.horizontal.decrement.disabled {
+	background-position: /* left arrow */
+		calc(9px * -3 + 1px) 1px,
+		calc(9px * -3 + 2px) 2px;
+	background-position: /* left arrow */
+		calc(var(--scrollbar-button-inner-size) * -3 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -3 + 2px) 2px;
+}
+.scrollbar-button.horizontal.increment.disabled {
+	background-position: /* right arrow */
+		calc(9px * -2 + 1px) 1px,
+		calc(9px * -2 + 2px) 2px;
+	background-position: /* right arrow */
+		calc(var(--scrollbar-button-inner-size) * -2 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -2 + 2px) 2px;
+}
+.scrollbar-button.vertical.decrement.disabled {
+	background-position: /* up arrow */
+		calc(9px * -1 + 1px) 1px,
+		calc(9px * -1 + 2px) 2px;
+	background-position: /* up arrow */
+		calc(var(--scrollbar-button-inner-size) * -1 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -1 + 2px) 2px;
+}
+.scrollbar-button.vertical.increment.disabled {
+	background-position: /* down arrow */
+		calc(9px * -0 + 1px) 1px,
+		calc(9px * -0 + 2px) 2px;
+	background-position: /* down arrow */
+		calc(var(--scrollbar-button-inner-size) * -0 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -0 + 2px) 2px;
+}
+
+.scrollbar-button.horizontal.decrement {
+	background-position: calc(9px * -3 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -3 + 1px) 1px; /* left */
+}
+.scrollbar-button.horizontal.increment {
+	background-position: calc(9px * -2 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -2 + 1px) 1px; /* right */
+}
+.scrollbar-button.vertical.decrement {
+	background-position: calc(9px * -1 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -1 + 1px) 1px; /* up */
+}
+.scrollbar-button.vertical.increment {
+	background-position: calc(9px * -0 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -0 + 1px) 1px; /* down */
+}
+
+
+

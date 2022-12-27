@@ -108,6 +108,10 @@
     /* background: white; */
     position: relative;
     z-index: 100;
+    color: black;
+  }
+  .day.dark {
+    color: white;
   }
   
   .day.other {

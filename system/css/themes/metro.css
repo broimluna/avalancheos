@@ -7,7 +7,9 @@
   .ui-icon-gripsmall-diagonal-se {
     display: none;
 }
-
+.winheadimg {
+    margin: 2px 3px;
+}
 
   /* Context menu */
 .context-menu {
@@ -31,11 +33,13 @@
 }
 /* end of context menu*/
   .appsHtxt {
-      text-align: unset !important;
       margin: 15px 10px;
       font-size: 28px;
-      color: white;
   }
+
+  .curtheme::before {
+    content: 'Metro';
+   }
   #appsmenu {
       position: fixed;
      margin: unset !important;

@@ -1,11 +1,15 @@
 #appsmenu {
     background: transparent;
-    margin: none;
+    margin: 0 !important;
     bottom: 43px;
     border-radius: 0px;
     border-top-right-radius: 16px;
     left: 0;
 }
+
+.curtheme::before {
+    content: 'Classic';
+   }
 
 .context-menu {
     background: transparent;
@@ -29,6 +33,7 @@ strong {
     bottom: 0;
     width: 100%;
     text-align: unset;
+    border-radius: 0px;
 }
 .window {
     background: transparent;

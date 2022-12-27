@@ -1,5 +1,5 @@
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
-body{line-height:1;	font-family: Arial, Helvetica, sans-serif;color:black;}
+body{line-height:1;font-family: Segoe UI;color:black;}
 h1 {font-size: 1.5em;margin-bottom: 10px;}
 p{font-size: 15px;line-height: 1.3em;margin-bottom: 10px;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
@@ -13,9 +13,23 @@ del{text-decoration:line-through}
 abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
 table{border-collapse:collapse;border-spacing:0}
 hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
-input,select{vertical-align:middle}
+input,select{vertical-align:middle; font-family: Segoe UI;}
+
+/*Special Values*/
+:root {
+    --wppickercolor: black;
+}
+:root.dark {
+    --wppickercolor: white;
+}
 
 
+
+@font-face {
+    font-family: Segoe UI;
+    src: url(../fonts/segoeuisl.ttf);
+    font-weight: bolder;
+}
 @media screen and (max-width:769px) {
     #themesrow, .themestext, .themeshr, #app6, #sliders {
         display: none !important;
@@ -123,23 +137,33 @@ input,select{vertical-align:middle}
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
   }
 
-
-#appsHtxt {
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
+/* End of special values */
+.appsHtxt {
+    font-family: Segoe UI;
     text-align: center;
     margin: 12px 0px;
 }
-#appsHtxt.dark {
-    color: white;
+
+.curtheme::before {
+ content: 'Default';
 }
+
 #colorop {
     transition: 0.5s;
 }
 
-/*a, h1, p, ul, input {
-    color: black;
-}*/
+h1.dark, strong.dark, .centrdAppsTxt.dark, a#dmToggle.dark, #abranding a.dark, .abttxt.dark, span.winclose.dark, .curthemea.dark, .curtheme.dark {
+    color: white !important;
+}
+button.dark, #notebutton.dark {
+    color: white;
+    background: black;
+    border-color: white;
+}
+span.dark {
+    border-color: white !important;
+}
+
 
 .slider {
     width: 100px;
@@ -169,14 +193,31 @@ input,select{vertical-align:middle}
      border-radius: 16px;
      cursor: e-resize;
   }
-  
   #bwSlider {
-     display: none;
+    background: -webkit-linear-gradient(black, white);
+    background: -o-linear-gradient(black, white);
+    background: -moz-linear-gradient(black, white);
+    background: linear-gradient(to right, black, white);
+    border-radius: 6px;
+    cursor: e-resize;
   }
+  
+  #bwSlider .ui-slider-range {
+    background: black;
+    border-radius: 16px;
+  }
+  
+  #bwSlider .ui-state-default,
+  .ui-widget-content .ui-state-default {
+    background: none;
+    background-color: rgb(130, 130, 130);
+    border-radius: 16px;
+    cursor: e-resize;  
+}
 
 
 #desktop {
-	font-family: Arial, Helvetica, sans-serif;
+    font-family: Segoe UI;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -197,7 +238,7 @@ input,select{vertical-align:middle}
     top: 2px;
     right: 2px;
     color: black;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: Segoe UI;
     text-align: right;
     font-size: 15px;
     transition: 0.2s;
@@ -207,14 +248,14 @@ input,select{vertical-align:middle}
     top: 21px;
     right: 2px;
     color: black;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: Segoe UI;
     text-align: right;
     font-size: 15px;
     transition: 0.2s;
 }
 
 #time.dark, #date.dark {
-    color: white;
+    color: white !important;
 }
 
 #appsmenu {
@@ -236,7 +277,7 @@ input,select{vertical-align:middle}
 }
 
 #appsmenu.dark {
-    background: #0000009f;
+    background: #2929299f;
 }
 
 #appsmenu.opened {
@@ -247,7 +288,7 @@ input,select{vertical-align:middle}
 	background:transparent;
 	border:solid 1px transparent;
 	margin: 7px 0 7px 7px;
-	height: 85%;
+	height: 72%;
 	overflow-y: scroll;
 	float:left;
 	display:block;
@@ -276,6 +317,10 @@ input,select{vertical-align:middle}
     border: 1px solid white;
     transition: 0.1s;
 }
+#appicons a.dark:hover {
+    background: #0000007a;
+    border: 1px solid black;
+}
 #appicons a img {
     border:0; 
     vertical-align:middle; 
@@ -299,7 +344,7 @@ input,select{vertical-align:middle}
 
   .tab {
     padding: 10px;
-    height: 70%;
+    height: 73%;
     overflow-y: scroll;
     margin: -15px 0px;
 }
@@ -315,7 +360,12 @@ input,select{vertical-align:middle}
 .textinput {
     border-radius: 16px;
     border: 2px solid;
-    border-color: transparent;
+    border-color: black;
+}
+.textinput.dark {
+      background: black;
+      color: white;
+      border: 2px solid;
 }
 
 
@@ -323,33 +373,29 @@ input,select{vertical-align:middle}
     visibility: hidden;
   }
   .wppicker::before {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Segoe UI;
     content: 'Select your wallpaper';
     display: inline-block;
     background: #CCC;
     font-size: 15px;
     border: 2px solid;
-    border-color: var(--wppickercolor);;
+    border-color: var(--wppickercolor);
     border-radius: 5px;
-    height: 20px;
-    margin: 2px 2px;
+    height: 22px;
+    margin: 0px 2px;
+    padding: 2px;
     font-weight: bold;
-    cursor: pointer;
-    color: black !important;
-    
-
-  }
-  .wppicker:hover::before {
-    border-color: #ffffff;
-  }
-  .wppicker:active::before {
-    background: #CCC;
+    color: black;
   }
 
   .wppicker {
+    cursor: pointer;
     color: transparent;
-    --wppickercolor: #ffffff;
   }
+  .wppicker.dark::before {
+    color: white;
+    background: black;
+}
 
 
 .context-menu {
@@ -362,6 +408,9 @@ input,select{vertical-align:middle}
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     transition: 0.2s;
+}
+.context-menu.dark {
+    background: #29292960;
 }
 
 .context-menu ul {
@@ -381,6 +430,9 @@ input,select{vertical-align:middle}
     text-decoration: none;
     cursor: pointer;
 }
+.context-menu ul li.dark {
+    color: white;
+}
 
 
 .context-menu ul li:hover {
@@ -393,13 +445,12 @@ input,select{vertical-align:middle}
 	right: 15px;
 }
 .bottomBtns a {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Segoe UI;
     text-decoration: transparent;
 }
 #userProfile {
 	position: absolute;
 	bottom: 0px;
-	display: none;
 	right: 0;
 	left: 0;
 }
@@ -407,13 +458,13 @@ input,select{vertical-align:middle}
     color: white;
 }
 #userProfile a {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Segoe UI;
     text-decoration: transparent;
     border: solid 1px transparent;
     display: inline-flex;
     padding:3px;
-    line-height: 11px;
-    margin:3px;
+    line-height: 10.5px;
+    margin: 2px;
     text-decoration: none;
     min-width: 230px;
     text-align: left;
@@ -436,10 +487,9 @@ input,select{vertical-align:middle}
 
 #settingsUP {
         right: 5px;
-        bottom: 5px;
+        bottom: 4.5px;
         position: absolute;
         cursor: pointer;
-        display: none;
 }
 /*.btmbtninvert {
     filter: invert(1);
@@ -471,7 +521,7 @@ input,select{vertical-align:middle}
   }
   button {
     border: 2px solid;
-    border-color: #ffffff;
+    border-color: black;
     border-radius: 5px;
     font-size: 15px;
     background: #CCC;
@@ -479,6 +529,7 @@ input,select{vertical-align:middle}
     cursor: pointer;
     height: 30px;
     margin: 0px 2px;
+    font-family: Segoe UI;
   }
 
 .window {
@@ -492,6 +543,9 @@ input,select{vertical-align:middle}
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+}
+.window.dark {
+    background: #29292960;
 }
 .window.closed {
 	display: none;
@@ -553,6 +607,7 @@ input,select{vertical-align:middle}
     height: 22px;
     position: relative;
     overflow: hidden;
+    border-color: transparent !important;
 }
 .windowHeader > span:hover {
 	background: rgba(255,255,255,0.3);
@@ -566,11 +621,13 @@ input,select{vertical-align:middle}
     left: 10px;
 }
 .winminimize > span {
-	border-bottom: 3px solid black;
+	border-bottom: 3px solid;
+	border-color: black;
 }
 .winmaximize > span {
-	border: 2px solid black;
-	border-top: 3px solid black;
+	border: 2px solid;
+	border-top: 3px solid;
+    border-color: black;
 }
 .winmaximize > span:nth-child(2) {
 	display: none;
@@ -601,19 +658,30 @@ input,select{vertical-align:middle}
     display: inline-flex;
 }
 .taskbarPanel {
-    display: inline-block;
+    display: inline-flex;
     position: relative;
     border: 2px solid transparent;
     border-radius: 5px;
-    line-height: 12px;
+    line-height: 33px;
+    font-family: Segoe UI;
     font-size: 15px;
     margin: 2px 4px;
+    padding: 0.3px 0px;
     background: transparent;
     font-weight: bold;
     cursor: pointer;
-    padding: 0 1px;    
     transform: scale(1);
     transition: 0.5s;
+    color: black;
+}
+.taskbarPanel.dark {
+    color: white;
+}
+.winheadimg {
+    margin: 1px 3px;
+}
+.taskpanelimg {
+    margin: 0px 0px;
 }
 #appsPanel {
     display: inline-block;
@@ -631,10 +699,6 @@ input,select{vertical-align:middle}
     left: 0;
     position: absolute;
 }
-#appsPanel.opened {
-    background: #2e2e2e;
-    border-radius: 4px;
-}
 #appsPanel img {
     transition: 0.5s;
     margin:0px 0px;
@@ -650,16 +714,23 @@ border-radius: 4px;
     transition: 0.5s;
     color: #FFF;
 }
+.taskbarPanel.dark:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
 .taskbarPanel.activeTab {
     background-color: #2e2e2e;
-    transform: scale(1.14);
-}
-.taskbarPanel.activeTab.dark {
-    background-color: #ffffff;
-    transform: scale(1.14);
+    transform: scale(1.165);
+    color: white;
 }
 .taskbarPanel.activeTab:hover {
     background: rgba(0, 0, 0, 0.3);
+}
+.taskbarPanel.activeTab.dark {
+    background-color: #ffffff;
+    color: black;
+}
+.taskbarPanel.activeTab.dark:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 .taskbarPanel.minimizedTab {
     transition: 0.5s;
@@ -667,6 +738,22 @@ border-radius: 4px;
 
 .taskbarPanel.closed {
 	display: none;
+}
+.taskbarPanel > .bronzeReversed.dark {
+    filter: invert(0);
+    transition: 0.2s;
+}
+.taskbarPanel.activeTab > .bronzeReversed.dark {
+  filter: invert(1);
+  transition: 0.2s;
+}
+.taskbarPanel > .bronzeReversed {
+    filter: invert(1);
+    transition: 0.2s;
+}
+.taskbarPanel.activeTab > .bronzeReversed {
+  filter: invert(0);
+  transition: 0.2s;
 }
 #taskbar {
 	position: absolute;
@@ -687,14 +774,13 @@ border-radius: 4px;
 	text-align: center;
 }
 #taskbar.dark {
-    background: #0000009f;
+    background: #2929299f;
 }
 #icons {
 	position: absolute;
 	z-index: 1;
 	top: 20px;
 	left: 20px;
-    display: none;
     transition: 0.2s;
 }
 #icons.dark {
@@ -785,6 +871,10 @@ border-radius: 4px;
 #window2 {    left: -118px;	}
 #window1 .wincontent {    width: auto;    height: 300px;	}
 }
+#window1 .wincontent {
+    min-width: 520px;
+    min-height: 352px;
+    }
 #window2 .wincontent {
     min-width: 340px;
     min-height: 350px;
@@ -821,8 +911,8 @@ min-height: 365px;
          border-radius: 50px;
          margin: 16px 2px;
          font-size: 20px;
-         font-family: Arial, Helvetica, sans-serif;
-}
+         font-family: Segoe UI;
+        }
 
 .calctext {
         background-color:white;
@@ -832,8 +922,8 @@ min-height: 365px;
         border-radius: 50px;
         height: 100%;
         font-size: 18px;
-        font-family: Arial, Helvetica, sans-serif;
-}
+        font-family: Segoe UI;
+    }
 .calctable {
     border: 2px transparent;
     height: 100%;
@@ -857,3 +947,84 @@ min-height: 365px;
  li::marker {
    content: ''; 
 }
+/*Notepad*/
+#document-textarea {
+    background: white;
+    color: black;
+}
+#document-textarea.dark {
+    background: black;
+    color: white;
+    border-color: white;
+}
+#noteapp {
+    display: flex;
+    flex-direction: column;
+}
+#document-textarea {
+    width: 100%;
+    height: 91%;
+    position: absolute;
+    resize: none;
+    outline: none;
+    overflow: unset;
+    padding: 0;
+    border: 2px solid;
+    border-color: black;
+    white-space: pre;
+    padding: 2px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    font-size: large;
+    font-family: Segoe UI;
+}
+#notebutton {
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 1px 4px;
+    background: #CCC;
+    font-weight: bold;
+    cursor: pointer;
+    height: 17px;
+    margin: 1px 6px;
+    text-decoration: none;
+    color: black;
+  }
+  /*Bronze*/
+  .gsc-search-button-v2 {
+    font-size: 0;
+    padding: 11px 10px;
+    width: auto;
+    vertical-align: middle;
+    border: 1px solid !important;
+    border-radius: 16px !important;
+    border-color: transparent !important;
+    background-color: white !important;
+    transition: 0.1s !important;
+    cursor: pointer;
+}
+.gsc-search-button-v2.dark {
+  background-color: black !important;
+}
+
+.gsc-input-box {
+  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  transition: 0.1s !important;
+}
+
+
+
+  .gsc-search-button-v2:hover {
+    background: #ffffffbe !important;
+    border: 1px solid white !important;
+    transition: 0.1s !important;
+  }
+  .gsc-search-button-v2 svg {
+    fill: black !important;
+}
+.gsc-search-button-v2.black svg {
+  fill: white !important;
+} 

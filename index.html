@@ -8,11 +8,9 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="system/js/script.js"></script>	
-	<script src="system/js/audioplayer.js"></script>
 	<link rel="stylesheet" type="text/css" href="system/css/style.css" />
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="system/css/themes/metro.css" media="only screen and (max-width: 767px)">
-	<link rel="alternate stylesheet 1" type="text/css" title="theme1" href="system/css/themes/pos.css">
 	<link rel="alternate stylesheet 2" type="text/css" title="theme2" href="system/css/themes/metro.css">
 	<link rel="alternate stylesheet 3" type="text/css" title="theme3" href="system/css/themes/classic.css">
 	<title>AvalancheOS</title>
@@ -23,26 +21,36 @@
 
 	<div id="desktop" class="desktop">
 		
-		   <div class="window closed" data-html="true" icon="<img src='system/img/icons/paint-32x32.png' width='32' height='32'>" data-title="Paint">
+		   <div class="window closed" data-html="true" taskicon="<img src='system/img/icons/paint-32x32.png' class='taskpanelimg' width='32' height='32'>" headicon="<img src='system/img/icons/paint-32x32.png' class='winheadimg' width='28' height='28'>" data-title="Paint">
 			<iframe width="100%" height="100%" src="apps/jspaint/index.html"></iframe>
 			</div>
 	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/notepad-32x32.png' width='32' height='32'>" data-title="Notepad">
-			<iframe width="100%" height="100%" src="apps/notepad/index.html"></iframe>
+			<div class="window closed" data-html="true" taskicon="<img src='system/img/icons/notepad-32x32.png' class='taskpanelimg' width='32' height='32'>" headicon="<img src='system/img/icons/notepad-32x32.png' class='winheadimg' width='28' height='28'>" data-title="Notepad">
+				<link href="system/css/apps/notepad/layout.css" rel="stylesheet" type="text/css">
+		        <link href="system/css/apps/notepad/notestyle.css" rel="stylesheet" type="text/css">
+		        <script src="system/js/apps/notepad/FileSaver.js"></script>
+		        <script src="system/js/apps/notepad/notepad.js"></script>
+				<div id="app">
+				<div class="menus" touch-action="none"><div class="menu-container"><input name="notefilename" placeholder="Enter a filename." type="text" maxlength="512" id="notefilename" class="textinput"/><button onclick="downloadNote();">Save</button></div></div>
+				<div id="document" class="inset-shallow">
+						<textarea id="document-textarea"></textarea>
+					</div>
+				</div>
+				<div id="print-helper"></div>
 			</div>
 	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/minesweeper-32x32.png' width='32' height='32'>" data-title="Minesweeper">
+			<div class="window closed" data-html="true" taskicon="<img src='system/img/icons/minesweeper-32x32.png' class='taskpanelimg' width='32' height='32'>" headicon="<img src='system/img/icons/minesweeper-32x32.png' class='winheadimg' width='28' height='28'>" data-title="Minesweeper">
 				<iframe width="100%" height="100%" src="apps/minesweeper/index.html"></iframe>
 			</div>
 										
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/cal-32x32.png' width='32' height='32'>" data-title="Calendar">
+			<div class="window closed" data-html="true" taskicon="<img src='system/img/icons/cal-32x32.png' class='taskpanelimg' width='32' height='32'>" headicon="<img src='system/img/icons/cal-32x32.png' class='winheadimg' width='28' height='28'>" data-title="Calendar">
 				<div id="calendar"></div>
-				<script src="system/js/apps/moment.min.js"></script>
-				<script src="system/js/apps/calendar.js"></script>
+				<script src="system/js/apps/calendar/moment.min.js"></script>
+				<script src="system/js/apps/calendar/calendar.js"></script>
 				<link href="system/css/apps/calendar.css" rel="stylesheet" type="text/css">
 				</div>
 	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/calc-32x32.png' width='32' height='32'>" data-title="Calculator">
+			<div class="window closed" data-html="true" taskicon="<img src='system/img/icons/calc-32x32.png' class='taskpanelimg' width='32' height='32'>" headicon="<img src='system/img/icons/calc-32x32.png' class='winheadimg' width='28' height='28'>" data-title="Calculator">
 				<table class="calctable" border="1">
 					<tr>
 					   <td colspan="3"><input class="calctext" type="text" id="result"/></td>
@@ -79,7 +87,7 @@
 				 </table>			
 			</div>
 	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/bronze-32x32.png' width='32' height='32'>" data-title="Bronze Browser">
+			<div class="window closed" data-html="true" taskicon="<img src='system/img/icons/bronze-32x32.png' class='taskpanelimg bronzeReversed' width='32' height='32'>" headicon="<img src='system/img/icons/bronze-32x32.png' class='winheadimg' width='28' height='28'>" data-title="Bronze Browser">
 				<link rel="stylesheet" href="system/css/apps/bronze.css">
 				<div id="bronzeIcons">
 					<a target="bronzeFrame" id="bronzeHome" href="system/appsassets/bronze/embed.html"><img src="system/img/apps/bronze/home.png"></a>
@@ -113,11 +121,11 @@
 				</div>			
 			</div>
 	
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/hyperos-32x32.png' width='32' height='32'>" data-title="HyperOS">
+			<div class="window closed" data-html="true" taskicon="<img src='system/img/icons/hyperos-32x32.png' class='taskpanelimg' width='32' height='32'>" headicon="<img src='system/img/icons/hyperos-32x32.png' class='winheadimg' width='28' height='28'>" data-title="HyperOS">
 				<a target="hos" href="apps/hyperos/index.html">Home</a>
 				<iframe name="hos" width="100%" height="100%" src="apps/hyperos/index.html"></iframe>
 			</div>
-			<div class="window closed" data-html="true" icon="<img src='system/img/icons/settings-32x32.png' width='32' height='32'>" data-title="Control Panel">
+			<div class="window closed" data-html="true" taskicon="<img src='system/img/icons/settings-32x32.png' class='taskpanelimg' width='32' height='32'>" headicon="<img src='system/img/icons/settings-32x32.png' class='winheadimg' width='28' height='28'>" data-title="Control Panel">
 				<div id="tabsettings">
 					<button id="settingsbutton" onclick="openTab('Customization')">Customization</button>
 					<button id="settingsbutton" onclick="openTab('About')">About</button>
@@ -131,7 +139,6 @@
 					<button id="settingsbutton" onclick="switch_style('default');return false;" name="Default Theme" value="Default Theme">Default</button>
 					<button id="settingsbutton" onclick="switch_style('theme3');return false;" name="Theme 3" value="Theme 3">Classic</button>
 					<button id="settingsbutton" onclick="switch_style('theme2');return false;" name="Theme 2" value="Theme 2">Metro</button>
-					<button id="settingsbutton" onclick="switch_style('theme1');return false;" name="Theme 1" value="Theme 1">prismOS</button>
 				</div>
 					<hr id="settingshr" class="themes">
 					<h1 id="settingsh1">Background</h1>
@@ -148,6 +155,7 @@
 					<h1 id="settingsh1">Colors</h1>
 					<div id="sliders" style="display: block;margin-top: 15px;margin-left: 4px;">
 					<div id="colouredSlider" class="slider"></div><span id="colorslTxt" style="position: absolute; visibility: hidden;">Colors</span>
+					<br>
 					<div id="bwSlider" class="slider"></div><span id="briteslTxt" style="position: absolute; visibility: hidden; display: none;">Brightness</span>
 				    </div>
 					<br>
@@ -166,7 +174,7 @@
 						<h1 id="settingsh1">Developer Options</h1>								
 						<hr id="settingshr">
 						<form name="searchpage" onSubmit="return enableFlag()">
-						<input type="text" size='20' name="keyword" class="textinput"><br><p style="font-size: 11px;">Theses flags are experimental<br>and may not be stable.</p> 
+						<input type="text" size='20' name="keyword" placeholder="Enter a flag." class="textinput"><br><p style="font-size: 11px;">Theses flags are experimental<br>and may not be stable.</p> 
 						<button value="Apply">Apply</button>
 						<br>
 						<select style="display: none !important" name="and_or" size='0'></select><br>
@@ -180,14 +188,16 @@
 					<br>
 					<a>AvalancheOS</a>
 					</div>
-		
 					<hr id="settingshr">
-					<a>December 2022 Release (Build: 9400)</a>
-					<br>		
+					<a class="abttxt">January 2023 Release (Build: 10560)</a>
+					<br>	
+					<br>			
+					<a class="curthemea">Current theme: <a class="curtheme"></a></a>
+                    <br>
 					<hr id="settingshr">
-					<a>broimluna - 2022</a>
+					<a class="abttxt">broimluna - 2022</a>
 					<br>
-					<p>Based on 'Windows' Template from <a target="blank" id="htmltemp" href="https://html5-templates.com">html5-templates.com</a></p>
+					<p class="abttxt">Based on 'Windows' Template from <a target="blank" id="htmltemp" class="abttxt" href="https://html5-templates.com">html5-templates.com</a></p>
 				</div>
 		
 				<div class="bottomBtns">
@@ -196,7 +206,7 @@
 			</div>
 
 
-	<div class="window closed" data-html="true" icon="<img src='system/img/icons/media-player.png' width='32' height='32'>" data-title="Media Player">
+	<div class="window closed" data-html="true" taskicon="<img src='system/img/icons/media-player.png' class='taskpanelimg' width='32' height='32'>" headicon="<img src='system/img/icons/media-player.png' class='winheadimg' width='28' height='28'>" data-title="Media Player">
 				<div class="wplist"><ul style="list-style: none">
 	            <li style="margin-left: 20px !important; margin-top: 10px !important; line-height: 135%;">
 		        <ul id="list">
@@ -247,16 +257,16 @@
 		
 		<div id="icons">
 		  <center>
-			<a class="openWindow" data-id="0"><img border="0" alt="" src="system/img/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>  
-			<a class="openWindow" data-id="1"><img border="0" alt="" src="system/img/icons/notepad-32x32.png" width="32" height="32"><br>Notepad</a>
-			<a class="openWindow" data-id="3"><img border="0" alt="" src="system/img/icons/cal-32x32.png" width="32" height="32"><br>Calendar</a>
-			<a class="openWindow" data-id="5"><img border="0" alt="" src="system/img/icons/bronze-32x32.png" width="32" height="32"><br>Bronze<br>Browser</a>
+			<a class="openWindowDblClick" data-id="0"><img border="0" alt="" src="system/img/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>  
+			<a class="openWindowDblClick" data-id="1"><img border="0" alt="" src="system/img/icons/notepad-32x32.png" width="32" height="32"><br>Notepad</a>
+			<a class="openWindowDblClick" data-id="3"><img border="0" alt="" src="system/img/icons/cal-32x32.png" width="32" height="32"><br>Calendar</a>
+			<a class="openWindowDblClick" data-id="5"><img border="0" alt="" src="system/img/icons/bronze-32x32.png" width="32" height="32"><br>Bronze<br>Browser</a>
 		  </center>      
 		</div>
 		
 		
 		<div id="appsmenu">
-			<h1 id="appsHtxt">Apps</h1>
+			<h1 class="appsHtxt">Apps</h1>
 				<div id="appicons">
 					<center>
 						<a class="openWindow" data-id="0"><img border="0" alt="" src="system/img/icons/paint-32x32.png" width="32" height="32"><br>Paint</a>
@@ -267,7 +277,6 @@
 						<a class="openWindow" data-id="5"><img border="0" alt="" src="system/img/icons/bronze-32x32.png" width="32" height="32"><br>Bronze Browser</a>
 						<a class="openWindow" data-id="6"><img border="0" alt="" src="system/img/icons/hyperos-32x32.png" width="32" height="32"><br>HyperOS</a>
 						<a class="openWindow" data-id="8"><img border="0" alt="" src="system/img/icons/media-player.png" width="32" height="32"><br>Media Player</a>
-						<a class="openWindow" data-id="7"><img border="0" alt="" src="system/img/icons/settings-32x32.png" width="32" height="32"><br>Control Panel</a>
 					</center>		
 				</div>
 				<div id="userProfile">
@@ -307,20 +316,23 @@
 <script>
 let darkToggle = document.querySelector('#dmToggle');
 darkToggle.addEventListener('change', ()=> {
-
+	let root = document.documentElement;
 	document.getElementById("time").classList.toggle("dark");
 	document.getElementById("date").classList.toggle("dark");
 	document.getElementById("taskbar").classList.toggle("dark");
 	document.getElementById("appsmenu").classList.toggle("dark");
 	document.getElementById("appicons").classList.toggle("dark");
-	document.getElementById("appsHtxt").classList.toggle("dark");
 	document.getElementById("icons").classList.toggle("dark");
 	document.getElementById("settingsUP").classList.toggle("dark");
 	document.getElementById("userProfile").classList.toggle("dark");
+	root.classList.toggle("dark")
 	$("#userProfile hr").toggleClass("dark");
-
-
-
+	$("h1, strong, .centrdAppsTxt, #abranding a, a#dmToggle, .abttxt, span.winclose, span, #appicons a, .day, .wppicker, .textinput, .curthemea, .curtheme").toggleClass("dark");
+	$("button, #button, #notebutton").toggleClass("dark");
+	$("#document-textarea").toggleClass("dark");
+	$(".taskbarPanel, .bronzeReversed").toggleClass("dark");
+	$(".context-menu, .context-menu ul li").toggleClass("dark");
+	$(".window").toggleClass("dark");
 });
 
 //color slider
@@ -343,12 +355,14 @@ bwslider.slider({
 });
 
 function setColour() {
+  let root = document.documentElement;
   hsl1 = colourslider.slider("option", "value");
   hsl2 = bwslider.slider("option", "value");
-
-  $('.windowHeader, #appsmenu, #taskbar').css('background', "hsl(" + hsl1 + ", 100%, " + hsl2 + "%)");
+  root.style.setProperty('--wppickercolor', "hsl(" + hsl1 + ", 100%, " + hsl2 + "%)", "important");
+  $('.windowHeader, #appsmenu, #taskbar').css('background', "hsl(" + hsl1 + ", 100%, " + "50%)");
   $('#htmltemp, #watermark, #abranding a, .checkBox').css('color', "hsl(" + hsl1 + ", 100%, " + hsl2 + "%)");
-  $('#button, button, .calcbutton, .calctext, .textinput, .rstflgs').css('border-color', "hsl(" + hsl1 + ", 100%, " + hsl2 + "%)");
+  $('.checkBox').css('color', "hsl(" + hsl1 + ", 100%, " + "50%)");
+  $('#button, button, .calcbutton, .calctext, .textinput, .rstflgs, #notebutton, #document-textarea').css('border-color', "hsl(" + hsl1 + ", 100%, " + hsl2 + "%)");
   $("#colouredSlider .ui-state-default").css("background-color", "hsl(" + hsl1 + ", 100%, 50%)");
   $("#bwSlider .ui-state-default").css("background-color", "rgb(" + hsl2 * 2.5 + "," + hsl2 * 2.5 + "," + hsl2 * 2.5 + ")");
 }
