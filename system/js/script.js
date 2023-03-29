@@ -30,6 +30,21 @@ windowLeftPos = new Array,
 panel,
 id;
 
+window.addEventListener('load', function() {
+		var watermark = document.getElementById("watermark")
+	    var eoldate = new Date('2023-04-01')
+		var currentDate = new Date()
+
+		if(currentDate.getTime() > eoldate.getTime()) {
+			watermark.innerHTML = "The support for this release of AvalancheOS has ended.<br>Please move to a more <a href='../mountainOS'>recent version</a> to get support."
+						watermark.style.display = "inline-block"
+
+		}
+		else {
+           void(0);
+		}
+})
+
 // Flags URL begins here
 
 	// Loads the flag into RAM.
